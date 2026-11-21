@@ -1,0 +1,2521 @@
+{
+  "timestamp": "2026-11-21T00:20:50Z",
+  "mlx_version": "0.31.2",
+  "mlx_lm_version": "0.31.3",
+  "config": {
+    "models": "35b",
+    "arms": "baseline,moe_shallow,hybrid_suffix_0_8b,hybrid_suffix_0_8b_conf,draft_0_8b_conf",
+    "max_tokens": 128,
+    "prompts_per_cat": 4,
+    "out": "./experiments/track_d_decode_reversal/results_35b_conf.json",
+    "use_track_a": false,
+    "flush_slc": true,
+    "sync_rollback": false,
+    "margin_guard": 0.5,
+    "allow_mismatch_debug": false
+  },
+  "models": {
+    "35b": {
+      "model_id": "mlx-community/Qwen3.6-35B-A3B-4bit",
+      "is_moe": true,
+      "load_s": 1.44,
+      "track_a": {
+        "applied": false
+      },
+      "max_tokens": 128,
+      "prompts_per_cat": 4,
+      "arms": {
+        "baseline": {
+          "summary": {
+            "by_category": {
+              "code_edit": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 4567.09,
+                "tok_per_s": 111.23,
+                "speedup_vs_b1": 1.0,
+                "tau": 1.0,
+                "accept_rate": 0.0,
+                "avg_rollback_ms": 0.0,
+                "exact_parity_all": true
+              },
+              "extraction": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 4553.93,
+                "tok_per_s": 111.55,
+                "speedup_vs_b1": 1.0,
+                "tau": 1.0,
+                "accept_rate": 0.0,
+                "avg_rollback_ms": 0.0,
+                "exact_parity_all": true
+              },
+              "free_prose": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 4461.59,
+                "tok_per_s": 113.86,
+                "speedup_vs_b1": 1.0,
+                "tau": 1.0,
+                "accept_rate": 0.0,
+                "avg_rollback_ms": 0.0,
+                "exact_parity_all": true
+              }
+            },
+            "overall": {
+              "prompts": 12,
+              "decode_tokens": 1524,
+              "wall_ms": 13582.61,
+              "tok_per_s": 112.2,
+              "speedup_vs_b1": 1.0,
+              "tau": 1.0,
+              "accept_rate": 0.0,
+              "avg_rollback_ms": 0.0,
+              "total_rollback_ms": 0.0,
+              "rollback_count": 0,
+              "exact_parity_all": true
+            }
+          },
+          "per_prompt": [
+            {
+              "prompt_id": "code_edit_1",
+              "category": "code_edit",
+              "prompt_tokens": 530,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 193.04,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1127.39,
+              "tok_per_s": 112.649,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1127.39,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "code_edit_2",
+              "category": "code_edit",
+              "prompt_tokens": 681,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 215.63,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1181.04,
+              "tok_per_s": 107.533,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1181.04,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "code_edit_3",
+              "category": "code_edit",
+              "prompt_tokens": 570,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 195.92,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1134.99,
+              "tok_per_s": 111.895,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1134.99,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "code_edit_4",
+              "category": "code_edit",
+              "prompt_tokens": 449,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 172.08,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1123.67,
+              "tok_per_s": 113.022,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1123.67,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "extraction_1",
+              "category": "extraction",
+              "prompt_tokens": 762,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 223.07,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1149.16,
+              "tok_per_s": 110.516,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1149.16,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "extraction_2",
+              "category": "extraction",
+              "prompt_tokens": 877,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 242.33,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1139.07,
+              "tok_per_s": 111.495,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1139.07,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "extraction_3",
+              "category": "extraction",
+              "prompt_tokens": 562,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 190.79,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1136.33,
+              "tok_per_s": 111.763,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1136.33,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "extraction_4",
+              "category": "extraction",
+              "prompt_tokens": 650,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 204.75,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1129.37,
+              "tok_per_s": 112.452,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1129.37,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "free_prose_1",
+              "category": "free_prose",
+              "prompt_tokens": 171,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 113.18,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1118.51,
+              "tok_per_s": 113.544,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1118.51,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "free_prose_2",
+              "category": "free_prose",
+              "prompt_tokens": 126,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 98.54,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1109.79,
+              "tok_per_s": 114.436,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1109.79,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "free_prose_3",
+              "category": "free_prose",
+              "prompt_tokens": 120,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 95.1,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1116.1,
+              "tok_per_s": 113.789,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1116.1,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            },
+            {
+              "prompt_id": "free_prose_4",
+              "category": "free_prose",
+              "prompt_tokens": 125,
+              "generated_tokens": 128,
+              "exact_parity": true,
+              "prefill_ms": 97.55,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1117.19,
+              "tok_per_s": 113.678,
+              "steps": 127,
+              "tau": 1.0,
+              "draft_ms": 0.0,
+              "verify_ms": 1117.19,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "proposed_drafts": 0,
+              "accepted_drafts": 0,
+              "accept_rate": 0.0
+            }
+          ]
+        },
+        "moe_shallow": {
+          "summary": {
+            "by_category": {
+              "code_edit": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 2243.71,
+                "tok_per_s": 226.41,
+                "speedup_vs_b1": 2.036,
+                "tau": 2.761,
+                "accept_rate": 0.8265,
+                "avg_rollback_ms": 0.52,
+                "exact_parity_all": true
+              },
+              "extraction": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 3625.63,
+                "tok_per_s": 140.11,
+                "speedup_vs_b1": 1.256,
+                "tau": 1.485,
+                "accept_rate": 0.4897,
+                "avg_rollback_ms": 0.518,
+                "exact_parity_all": true
+              },
+              "free_prose": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 4297.67,
+                "tok_per_s": 118.2,
+                "speedup_vs_b1": 1.038,
+                "tau": 1.095,
+                "accept_rate": 0.3577,
+                "avg_rollback_ms": 0.508,
+                "exact_parity_all": true
+              }
+            },
+            "overall": {
+              "prompts": 12,
+              "decode_tokens": 1524,
+              "wall_ms": 10167.01,
+              "tok_per_s": 149.9,
+              "speedup_vs_b1": 1.336,
+              "tau": 1.539,
+              "accept_rate": 0.6253,
+              "avg_rollback_ms": 0.516,
+              "total_rollback_ms": 88.77,
+              "rollback_count": 172,
+              "exact_parity_all": true
+            }
+          },
+          "per_prompt": [
+            {
+              "prompt_id": "code_edit_1",
+              "category": "code_edit",
+              "prompt_tokens": 530,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.893,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 191.65,
+              "decode_tokens": 127,
+              "decode_wall_ms": 595.58,
+              "tok_per_s": 213.239,
+              "steps": 49,
+              "b1_fallback_steps": 13,
+              "margin_guard_triggers": 0,
+              "tau": 2.592,
+              "draft_ms": 1.11,
+              "verify_ms": 587.22,
+              "rollback_ms": 5.32,
+              "rollback_count": 10,
+              "avg_rollback_ms": 0.532,
+              "proposed_drafts": 99,
+              "accepted_drafts": 78,
+              "accept_rate": 0.7879,
+              "proposer_stats": {
+                "primary_steps": 36,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 8,
+                    "3": 2,
+                    "4": 1,
+                    "5": 3,
+                    "6": 22
+                  },
+                  "misses": 13,
+                  "total_hits": 36
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 13,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 287,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_2",
+              "category": "code_edit",
+              "prompt_tokens": 681,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 2.58,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 215.62,
+              "decode_tokens": 127,
+              "decode_wall_ms": 457.71,
+              "tok_per_s": 277.468,
+              "steps": 34,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.735,
+              "draft_ms": 0.51,
+              "verify_ms": 453.4,
+              "rollback_ms": 2.04,
+              "rollback_count": 4,
+              "avg_rollback_ms": 0.509,
+              "proposed_drafts": 101,
+              "accepted_drafts": 93,
+              "accept_rate": 0.9208,
+              "proposer_stats": {
+                "primary_steps": 34,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 1,
+                    "3": 0,
+                    "4": 0,
+                    "5": 1,
+                    "6": 32
+                  },
+                  "misses": 0,
+                  "total_hits": 34
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 0,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 0,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_3",
+              "category": "code_edit",
+              "prompt_tokens": 570,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.6,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 196.59,
+              "decode_tokens": 127,
+              "decode_wall_ms": 709.15,
+              "tok_per_s": 179.087,
+              "steps": 63,
+              "b1_fallback_steps": 27,
+              "margin_guard_triggers": 0,
+              "tau": 2.016,
+              "draft_ms": 1.09,
+              "verify_ms": 698.16,
+              "rollback_ms": 8.3,
+              "rollback_count": 16,
+              "avg_rollback_ms": 0.519,
+              "proposed_drafts": 95,
+              "accepted_drafts": 64,
+              "accept_rate": 0.6737,
+              "proposer_stats": {
+                "primary_steps": 36,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 12,
+                    "3": 5,
+                    "4": 0,
+                    "5": 4,
+                    "6": 15
+                  },
+                  "misses": 26,
+                  "total_hits": 36
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 26,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 291,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_4",
+              "category": "code_edit",
+              "prompt_tokens": 449,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 2.335,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 170.55,
+              "decode_tokens": 127,
+              "decode_wall_ms": 481.27,
+              "tok_per_s": 263.883,
+              "steps": 38,
+              "b1_fallback_steps": 4,
+              "margin_guard_triggers": 0,
+              "tau": 3.342,
+              "draft_ms": 0.63,
+              "verify_ms": 476.39,
+              "rollback_ms": 2.53,
+              "rollback_count": 5,
+              "avg_rollback_ms": 0.505,
+              "proposed_drafts": 97,
+              "accepted_drafts": 89,
+              "accept_rate": 0.9175,
+              "proposer_stats": {
+                "primary_steps": 34,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 4,
+                    "3": 1,
+                    "4": 0,
+                    "5": 2,
+                    "6": 27
+                  },
+                  "misses": 4,
+                  "total_hits": 34
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 4,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 285,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_1",
+              "category": "extraction",
+              "prompt_tokens": 762,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.347,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 227.28,
+              "decode_tokens": 127,
+              "decode_wall_ms": 852.98,
+              "tok_per_s": 148.89,
+              "steps": 81,
+              "b1_fallback_steps": 49,
+              "margin_guard_triggers": 0,
+              "tau": 1.568,
+              "draft_ms": 1.42,
+              "verify_ms": 841.0,
+              "rollback_ms": 9.35,
+              "rollback_count": 18,
+              "avg_rollback_ms": 0.519,
+              "proposed_drafts": 75,
+              "accepted_drafts": 46,
+              "accept_rate": 0.6133,
+              "proposer_stats": {
+                "primary_steps": 32,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 20,
+                    "3": 2,
+                    "4": 1,
+                    "5": 3,
+                    "6": 6
+                  },
+                  "misses": 48,
+                  "total_hits": 32
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 48,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 275,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_2",
+              "category": "extraction",
+              "prompt_tokens": 877,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.458,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 245.54,
+              "decode_tokens": 127,
+              "decode_wall_ms": 781.22,
+              "tok_per_s": 162.565,
+              "steps": 71,
+              "b1_fallback_steps": 37,
+              "margin_guard_triggers": 0,
+              "tau": 1.789,
+              "draft_ms": 1.31,
+              "verify_ms": 769.54,
+              "rollback_ms": 9.01,
+              "rollback_count": 17,
+              "avg_rollback_ms": 0.53,
+              "proposed_drafts": 86,
+              "accepted_drafts": 56,
+              "accept_rate": 0.6512,
+              "proposer_stats": {
+                "primary_steps": 34,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 16,
+                    "3": 2,
+                    "4": 1,
+                    "5": 3,
+                    "6": 12
+                  },
+                  "misses": 37,
+                  "total_hits": 34
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 37,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 298,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_3",
+              "category": "extraction",
+              "prompt_tokens": 562,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.154,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 192.71,
+              "decode_tokens": 127,
+              "decode_wall_ms": 984.9,
+              "tok_per_s": 128.947,
+              "steps": 93,
+              "b1_fallback_steps": 51,
+              "margin_guard_triggers": 0,
+              "tau": 1.366,
+              "draft_ms": 1.59,
+              "verify_ms": 966.1,
+              "rollback_ms": 16.1,
+              "rollback_count": 31,
+              "avg_rollback_ms": 0.519,
+              "proposed_drafts": 95,
+              "accepted_drafts": 34,
+              "accept_rate": 0.3579,
+              "proposer_stats": {
+                "primary_steps": 42,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 30,
+                    "3": 4,
+                    "4": 0,
+                    "5": 7,
+                    "6": 1
+                  },
+                  "misses": 51,
+                  "total_hits": 42
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 51,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 250,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_4",
+              "category": "extraction",
+              "prompt_tokens": 650,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.122,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 207.28,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1006.53,
+              "tok_per_s": 126.176,
+              "steps": 97,
+              "b1_fallback_steps": 60,
+              "margin_guard_triggers": 0,
+              "tau": 1.309,
+              "draft_ms": 1.54,
+              "verify_ms": 989.77,
+              "rollback_ms": 14.26,
+              "rollback_count": 28,
+              "avg_rollback_ms": 0.509,
+              "proposed_drafts": 83,
+              "accepted_drafts": 30,
+              "accept_rate": 0.3614,
+              "proposer_stats": {
+                "primary_steps": 37,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 28,
+                    "3": 3,
+                    "4": 2,
+                    "5": 3,
+                    "6": 1
+                  },
+                  "misses": 59,
+                  "total_hits": 37
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 59,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 256,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_1",
+              "category": "free_prose",
+              "prompt_tokens": 171,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.11,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 112.98,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1007.91,
+              "tok_per_s": 126.004,
+              "steps": 105,
+              "b1_fallback_steps": 84,
+              "margin_guard_triggers": 0,
+              "tau": 1.21,
+              "draft_ms": 1.7,
+              "verify_ms": 998.65,
+              "rollback_ms": 6.63,
+              "rollback_count": 13,
+              "avg_rollback_ms": 0.51,
+              "proposed_drafts": 48,
+              "accepted_drafts": 22,
+              "accept_rate": 0.4583,
+              "proposer_stats": {
+                "primary_steps": 21,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 15,
+                    "3": 0,
+                    "4": 0,
+                    "5": 5,
+                    "6": 1
+                  },
+                  "misses": 83,
+                  "total_hits": 21
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 83,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 331,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_2",
+              "category": "free_prose",
+              "prompt_tokens": 126,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.009,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 98.53,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1099.92,
+              "tok_per_s": 115.463,
+              "steps": 122,
+              "b1_fallback_steps": 113,
+              "margin_guard_triggers": 0,
+              "tau": 1.041,
+              "draft_ms": 1.83,
+              "verify_ms": 1093.46,
+              "rollback_ms": 4.08,
+              "rollback_count": 8,
+              "avg_rollback_ms": 0.51,
+              "proposed_drafts": 17,
+              "accepted_drafts": 5,
+              "accept_rate": 0.2941,
+              "proposer_stats": {
+                "primary_steps": 9,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 9,
+                    "3": 0,
+                    "4": 0,
+                    "5": 0,
+                    "6": 0
+                  },
+                  "misses": 113,
+                  "total_hits": 9
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 113,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 340,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_3",
+              "category": "free_prose",
+              "prompt_tokens": 120,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 0.992,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 94.88,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1125.63,
+              "tok_per_s": 112.826,
+              "steps": 124,
+              "b1_fallback_steps": 117,
+              "margin_guard_triggers": 0,
+              "tau": 1.024,
+              "draft_ms": 1.9,
+              "verify_ms": 1119.57,
+              "rollback_ms": 3.62,
+              "rollback_count": 7,
+              "avg_rollback_ms": 0.518,
+              "proposed_drafts": 14,
+              "accepted_drafts": 3,
+              "accept_rate": 0.2143,
+              "proposer_stats": {
+                "primary_steps": 7,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 7,
+                    "3": 0,
+                    "4": 0,
+                    "5": 0,
+                    "6": 0
+                  },
+                  "misses": 116,
+                  "total_hits": 7
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 116,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 352,
+                  "jacobi_pool_size": 0
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_4",
+              "category": "free_prose",
+              "prompt_tokens": 125,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.05,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 97.71,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1064.21,
+              "tok_per_s": 119.337,
+              "steps": 113,
+              "b1_fallback_steps": 93,
+              "margin_guard_triggers": 0,
+              "tau": 1.124,
+              "draft_ms": 1.69,
+              "verify_ms": 1054.24,
+              "rollback_ms": 7.53,
+              "rollback_count": 15,
+              "avg_rollback_ms": 0.502,
+              "proposed_drafts": 44,
+              "accepted_drafts": 14,
+              "accept_rate": 0.3182,
+              "proposer_stats": {
+                "primary_steps": 20,
+                "fallback_steps": 0,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "2": 16,
+                    "3": 0,
+                    "4": 0,
+                    "5": 2,
+                    "6": 2
+                  },
+                  "misses": 92,
+                  "total_hits": 20
+                },
+                "fallback_stats": {
+                  "committed_hits": 0,
+                  "jacobi_hits": 0,
+                  "probe_steps": 0,
+                  "skip_steps": 92,
+                  "harvested_jacobi_ngrams": 0,
+                  "pool_size": 314,
+                  "jacobi_pool_size": 0
+                }
+              }
+            }
+          ]
+        },
+        "hybrid_suffix_0_8b": {
+          "summary": {
+            "by_category": {
+              "code_edit": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 2220.84,
+                "tok_per_s": 228.74,
+                "speedup_vs_b1": 2.056,
+                "tau": 3.629,
+                "accept_rate": 0.891,
+                "avg_rollback_ms": 0.336,
+                "exact_parity_all": true
+              },
+              "extraction": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 2775.21,
+                "tok_per_s": 183.05,
+                "speedup_vs_b1": 1.641,
+                "tau": 3.629,
+                "accept_rate": 0.8889,
+                "avg_rollback_ms": 0.33,
+                "exact_parity_all": true
+              },
+              "free_prose": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 4195.95,
+                "tok_per_s": 121.07,
+                "speedup_vs_b1": 1.063,
+                "tau": 2.566,
+                "accept_rate": 0.5317,
+                "avg_rollback_ms": 0.328,
+                "exact_parity_all": true
+              }
+            },
+            "overall": {
+              "prompts": 12,
+              "decode_tokens": 1524,
+              "wall_ms": 9192.0,
+              "tok_per_s": 165.8,
+              "speedup_vs_b1": 1.478,
+              "tau": 3.188,
+              "accept_rate": 0.7418,
+              "avg_rollback_ms": 0.33,
+              "total_rollback_ms": 53.08,
+              "rollback_count": 161,
+              "exact_parity_all": true
+            }
+          },
+          "per_prompt": [
+            {
+              "prompt_id": "code_edit_1",
+              "category": "code_edit",
+              "prompt_tokens": 530,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.863,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 213.66,
+              "decode_tokens": 127,
+              "decode_wall_ms": 605.12,
+              "tok_per_s": 209.875,
+              "steps": 37,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.432,
+              "draft_ms": 107.84,
+              "verify_ms": 492.36,
+              "rollback_ms": 2.97,
+              "rollback_count": 9,
+              "avg_rollback_ms": 0.33,
+              "proposed_drafts": 110,
+              "accepted_drafts": 90,
+              "accept_rate": 0.8182,
+              "proposer_stats": {
+                "primary_steps": 26,
+                "fallback_steps": 11,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 24
+                  },
+                  "misses": 11,
+                  "total_hits": 26
+                },
+                "fallback_stats": {
+                  "propose_calls": 11,
+                  "catchup_tokens": 99,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_2",
+              "category": "code_edit",
+              "prompt_tokens": 681,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 2.55,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 248.41,
+              "decode_tokens": 127,
+              "decode_wall_ms": 463.2,
+              "tok_per_s": 274.18,
+              "steps": 33,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.848,
+              "draft_ms": 9.28,
+              "verify_ms": 450.68,
+              "rollback_ms": 1.07,
+              "rollback_count": 3,
+              "avg_rollback_ms": 0.358,
+              "proposed_drafts": 99,
+              "accepted_drafts": 94,
+              "accept_rate": 0.9495,
+              "proposer_stats": {
+                "primary_steps": 32,
+                "fallback_steps": 1,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 0,
+                    "5": 0,
+                    "6": 32
+                  },
+                  "misses": 1,
+                  "total_hits": 32
+                },
+                "fallback_stats": {
+                  "propose_calls": 1,
+                  "catchup_tokens": 1,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_3",
+              "category": "code_edit",
+              "prompt_tokens": 570,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.756,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 226.88,
+              "decode_tokens": 127,
+              "decode_wall_ms": 646.41,
+              "tok_per_s": 196.47,
+              "steps": 36,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.528,
+              "draft_ms": 162.36,
+              "verify_ms": 479.06,
+              "rollback_ms": 2.7,
+              "rollback_count": 8,
+              "avg_rollback_ms": 0.338,
+              "proposed_drafts": 105,
+              "accepted_drafts": 91,
+              "accept_rate": 0.8667,
+              "proposer_stats": {
+                "primary_steps": 18,
+                "fallback_steps": 18,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 16
+                  },
+                  "misses": 18,
+                  "total_hits": 18
+                },
+                "fallback_stats": {
+                  "propose_calls": 18,
+                  "catchup_tokens": 102,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_4",
+              "category": "code_edit",
+              "prompt_tokens": 449,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 2.22,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 197.12,
+              "decode_tokens": 127,
+              "decode_wall_ms": 506.11,
+              "tok_per_s": 250.935,
+              "steps": 34,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.735,
+              "draft_ms": 44.15,
+              "verify_ms": 458.57,
+              "rollback_ms": 0.98,
+              "rollback_count": 3,
+              "avg_rollback_ms": 0.327,
+              "proposed_drafts": 99,
+              "accepted_drafts": 93,
+              "accept_rate": 0.9394,
+              "proposer_stats": {
+                "primary_steps": 29,
+                "fallback_steps": 4,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 27
+                  },
+                  "misses": 4,
+                  "total_hits": 29
+                },
+                "fallback_stats": {
+                  "propose_calls": 4,
+                  "catchup_tokens": 115,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_1",
+              "category": "extraction",
+              "prompt_tokens": 762,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.743,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 264.8,
+              "decode_tokens": 127,
+              "decode_wall_ms": 659.44,
+              "tok_per_s": 192.587,
+              "steps": 34,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.735,
+              "draft_ms": 203.19,
+              "verify_ms": 453.18,
+              "rollback_ms": 0.96,
+              "rollback_count": 3,
+              "avg_rollback_ms": 0.319,
+              "proposed_drafts": 102,
+              "accepted_drafts": 93,
+              "accept_rate": 0.9118,
+              "proposer_stats": {
+                "primary_steps": 11,
+                "fallback_steps": 23,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 2,
+                    "5": 2,
+                    "6": 7
+                  },
+                  "misses": 23,
+                  "total_hits": 11
+                },
+                "fallback_stats": {
+                  "propose_calls": 23,
+                  "catchup_tokens": 80,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_2",
+              "category": "extraction",
+              "prompt_tokens": 877,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.742,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 292.73,
+              "decode_tokens": 127,
+              "decode_wall_ms": 653.78,
+              "tok_per_s": 194.255,
+              "steps": 36,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.528,
+              "draft_ms": 171.85,
+              "verify_ms": 477.94,
+              "rollback_ms": 1.96,
+              "rollback_count": 6,
+              "avg_rollback_ms": 0.327,
+              "proposed_drafts": 105,
+              "accepted_drafts": 91,
+              "accept_rate": 0.8667,
+              "proposer_stats": {
+                "primary_steps": 16,
+                "fallback_steps": 19,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 3,
+                    "6": 12
+                  },
+                  "misses": 19,
+                  "total_hits": 16
+                },
+                "fallback_stats": {
+                  "propose_calls": 19,
+                  "catchup_tokens": 89,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_3",
+              "category": "extraction",
+              "prompt_tokens": 562,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.558,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 223.51,
+              "decode_tokens": 127,
+              "decode_wall_ms": 729.45,
+              "tok_per_s": 174.103,
+              "steps": 35,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.629,
+              "draft_ms": 262.88,
+              "verify_ms": 462.35,
+              "rollback_ms": 1.99,
+              "rollback_count": 6,
+              "avg_rollback_ms": 0.331,
+              "proposed_drafts": 104,
+              "accepted_drafts": 92,
+              "accept_rate": 0.8846,
+              "proposer_stats": {
+                "primary_steps": 4,
+                "fallback_steps": 31,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 2,
+                    "5": 0,
+                    "6": 2
+                  },
+                  "misses": 31,
+                  "total_hits": 4
+                },
+                "fallback_stats": {
+                  "propose_calls": 31,
+                  "catchup_tokens": 69,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_4",
+              "category": "extraction",
+              "prompt_tokens": 650,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.542,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 244.38,
+              "decode_tokens": 127,
+              "decode_wall_ms": 732.54,
+              "tok_per_s": 173.37,
+              "steps": 35,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.629,
+              "draft_ms": 265.83,
+              "verify_ms": 462.77,
+              "rollback_ms": 1.7,
+              "rollback_count": 5,
+              "avg_rollback_ms": 0.341,
+              "proposed_drafts": 103,
+              "accepted_drafts": 92,
+              "accept_rate": 0.8932,
+              "proposer_stats": {
+                "primary_steps": 3,
+                "fallback_steps": 32,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 1
+                  },
+                  "misses": 32,
+                  "total_hits": 3
+                },
+                "fallback_stats": {
+                  "propose_calls": 32,
+                  "catchup_tokens": 68,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_1",
+              "category": "free_prose",
+              "prompt_tokens": 171,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.339,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 127.24,
+              "decode_tokens": 127,
+              "decode_wall_ms": 835.08,
+              "tok_per_s": 152.082,
+              "steps": 41,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.098,
+              "draft_ms": 293.71,
+              "verify_ms": 533.96,
+              "rollback_ms": 5.26,
+              "rollback_count": 16,
+              "avg_rollback_ms": 0.329,
+              "proposed_drafts": 120,
+              "accepted_drafts": 86,
+              "accept_rate": 0.7167,
+              "proposer_stats": {
+                "primary_steps": 5,
+                "fallback_steps": 36,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 2,
+                    "5": 2,
+                    "6": 1
+                  },
+                  "misses": 36,
+                  "total_hits": 5
+                },
+                "fallback_stats": {
+                  "propose_calls": 36,
+                  "catchup_tokens": 82,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_2",
+              "category": "free_prose",
+              "prompt_tokens": 126,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 0.878,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 109.18,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1263.5,
+              "tok_per_s": 100.514,
+              "steps": 59,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 2.153,
+              "draft_ms": 478.55,
+              "verify_ms": 767.67,
+              "rollback_ms": 14.91,
+              "rollback_count": 46,
+              "avg_rollback_ms": 0.324,
+              "proposed_drafts": 174,
+              "accepted_drafts": 68,
+              "accept_rate": 0.3908,
+              "proposer_stats": {
+                "primary_steps": 0,
+                "fallback_steps": 58,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 0,
+                    "5": 0,
+                    "6": 0
+                  },
+                  "misses": 58,
+                  "total_hits": 0
+                },
+                "fallback_stats": {
+                  "propose_calls": 58,
+                  "catchup_tokens": 101,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_3",
+              "category": "free_prose",
+              "prompt_tokens": 120,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 0.892,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 105.86,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1250.74,
+              "tok_per_s": 101.54,
+              "steps": 58,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 2.19,
+              "draft_ms": 472.79,
+              "verify_ms": 761.48,
+              "rollback_ms": 13.87,
+              "rollback_count": 42,
+              "avg_rollback_ms": 0.33,
+              "proposed_drafts": 171,
+              "accepted_drafts": 69,
+              "accept_rate": 0.4035,
+              "proposer_stats": {
+                "primary_steps": 0,
+                "fallback_steps": 58,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 0,
+                    "5": 0,
+                    "6": 0
+                  },
+                  "misses": 58,
+                  "total_hits": 0
+                },
+                "fallback_stats": {
+                  "propose_calls": 58,
+                  "catchup_tokens": 96,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_4",
+              "category": "free_prose",
+              "prompt_tokens": 125,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.32,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 108.88,
+              "decode_tokens": 127,
+              "decode_wall_ms": 846.63,
+              "tok_per_s": 150.006,
+              "steps": 40,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.175,
+              "draft_ms": 317.07,
+              "verify_ms": 522.37,
+              "rollback_ms": 4.71,
+              "rollback_count": 14,
+              "avg_rollback_ms": 0.336,
+              "proposed_drafts": 118,
+              "accepted_drafts": 87,
+              "accept_rate": 0.7373,
+              "proposer_stats": {
+                "primary_steps": 2,
+                "fallback_steps": 38,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 0,
+                    "5": 0,
+                    "6": 2
+                  },
+                  "misses": 38,
+                  "total_hits": 2
+                },
+                "fallback_stats": {
+                  "propose_calls": 38,
+                  "catchup_tokens": 78,
+                  "k_draft": 3
+                }
+              }
+            }
+          ]
+        },
+        "hybrid_suffix_0_8b_conf": {
+          "summary": {
+            "by_category": {
+              "code_edit": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 2331.33,
+                "tok_per_s": 217.9,
+                "speedup_vs_b1": 1.959,
+                "tau": 3.603,
+                "accept_rate": 0.9062,
+                "avg_rollback_ms": 0.328,
+                "exact_parity_all": true
+              },
+              "extraction": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 3023.45,
+                "tok_per_s": 168.02,
+                "speedup_vs_b1": 1.506,
+                "tau": 3.629,
+                "accept_rate": 0.8954,
+                "avg_rollback_ms": 0.323,
+                "exact_parity_all": true
+              },
+              "free_prose": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 4116.6,
+                "tok_per_s": 123.4,
+                "speedup_vs_b1": 1.084,
+                "tau": 2.024,
+                "accept_rate": 0.8371,
+                "avg_rollback_ms": 0.334,
+                "exact_parity_all": true
+              }
+            },
+            "overall": {
+              "prompts": 12,
+              "decode_tokens": 1524,
+              "wall_ms": 9471.38,
+              "tok_per_s": 160.91,
+              "speedup_vs_b1": 1.434,
+              "tau": 2.865,
+              "accept_rate": 0.8833,
+              "avg_rollback_ms": 0.33,
+              "total_rollback_ms": 23.07,
+              "rollback_count": 70,
+              "exact_parity_all": true
+            }
+          },
+          "per_prompt": [
+            {
+              "prompt_id": "code_edit_1",
+              "category": "code_edit",
+              "prompt_tokens": 530,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.859,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 223.02,
+              "decode_tokens": 127,
+              "decode_wall_ms": 606.34,
+              "tok_per_s": 209.453,
+              "steps": 37,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.432,
+              "draft_ms": 108.84,
+              "verify_ms": 492.53,
+              "rollback_ms": 2.98,
+              "rollback_count": 9,
+              "avg_rollback_ms": 0.332,
+              "proposed_drafts": 110,
+              "accepted_drafts": 90,
+              "accept_rate": 0.8182,
+              "proposer_stats": {
+                "primary_steps": 26,
+                "fallback_steps": 11,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 24
+                  },
+                  "misses": 11,
+                  "total_hits": 26
+                },
+                "fallback_stats": {
+                  "propose_calls": 11,
+                  "catchup_tokens": 99,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_2",
+              "category": "code_edit",
+              "prompt_tokens": 681,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 2.42,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 261.68,
+              "decode_tokens": 127,
+              "decode_wall_ms": 488.09,
+              "tok_per_s": 260.196,
+              "steps": 33,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.848,
+              "draft_ms": 9.68,
+              "verify_ms": 475.56,
+              "rollback_ms": 0.94,
+              "rollback_count": 3,
+              "avg_rollback_ms": 0.314,
+              "proposed_drafts": 99,
+              "accepted_drafts": 94,
+              "accept_rate": 0.9495,
+              "proposer_stats": {
+                "primary_steps": 32,
+                "fallback_steps": 1,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 0,
+                    "5": 0,
+                    "6": 32
+                  },
+                  "misses": 1,
+                  "total_hits": 32
+                },
+                "fallback_stats": {
+                  "propose_calls": 1,
+                  "catchup_tokens": 1,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_3",
+              "category": "code_edit",
+              "prompt_tokens": 570,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.597,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 249.3,
+              "decode_tokens": 127,
+              "decode_wall_ms": 710.66,
+              "tok_per_s": 178.707,
+              "steps": 37,
+              "b1_fallback_steps": 2,
+              "margin_guard_triggers": 0,
+              "tau": 3.432,
+              "draft_ms": 173.03,
+              "verify_ms": 533.64,
+              "rollback_ms": 1.65,
+              "rollback_count": 5,
+              "avg_rollback_ms": 0.329,
+              "proposed_drafts": 99,
+              "accepted_drafts": 90,
+              "accept_rate": 0.9091,
+              "proposer_stats": {
+                "primary_steps": 18,
+                "fallback_steps": 17,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 16
+                  },
+                  "misses": 18,
+                  "total_hits": 18
+                },
+                "fallback_stats": {
+                  "propose_calls": 18,
+                  "catchup_tokens": 104,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "code_edit_4",
+              "category": "code_edit",
+              "prompt_tokens": 449,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 2.135,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 210.86,
+              "decode_tokens": 127,
+              "decode_wall_ms": 526.24,
+              "tok_per_s": 241.337,
+              "steps": 34,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.735,
+              "draft_ms": 43.51,
+              "verify_ms": 480.1,
+              "rollback_ms": 0.66,
+              "rollback_count": 2,
+              "avg_rollback_ms": 0.329,
+              "proposed_drafts": 97,
+              "accepted_drafts": 93,
+              "accept_rate": 0.9588,
+              "proposer_stats": {
+                "primary_steps": 29,
+                "fallback_steps": 4,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 27
+                  },
+                  "misses": 4,
+                  "total_hits": 29
+                },
+                "fallback_stats": {
+                  "propose_calls": 4,
+                  "catchup_tokens": 115,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_1",
+              "category": "extraction",
+              "prompt_tokens": 762,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.521,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 287.65,
+              "decode_tokens": 127,
+              "decode_wall_ms": 755.64,
+              "tok_per_s": 168.068,
+              "steps": 34,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.735,
+              "draft_ms": 234.22,
+              "verify_ms": 517.76,
+              "rollback_ms": 1.05,
+              "rollback_count": 3,
+              "avg_rollback_ms": 0.35,
+              "proposed_drafts": 102,
+              "accepted_drafts": 93,
+              "accept_rate": 0.9118,
+              "proposer_stats": {
+                "primary_steps": 11,
+                "fallback_steps": 23,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 2,
+                    "5": 2,
+                    "6": 7
+                  },
+                  "misses": 23,
+                  "total_hits": 11
+                },
+                "fallback_stats": {
+                  "propose_calls": 23,
+                  "catchup_tokens": 80,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_2",
+              "category": "extraction",
+              "prompt_tokens": 877,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.618,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 307.94,
+              "decode_tokens": 127,
+              "decode_wall_ms": 703.86,
+              "tok_per_s": 180.435,
+              "steps": 36,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.528,
+              "draft_ms": 183.46,
+              "verify_ms": 516.4,
+              "rollback_ms": 1.91,
+              "rollback_count": 6,
+              "avg_rollback_ms": 0.319,
+              "proposed_drafts": 105,
+              "accepted_drafts": 91,
+              "accept_rate": 0.8667,
+              "proposer_stats": {
+                "primary_steps": 16,
+                "fallback_steps": 19,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 3,
+                    "6": 12
+                  },
+                  "misses": 19,
+                  "total_hits": 16
+                },
+                "fallback_stats": {
+                  "propose_calls": 19,
+                  "catchup_tokens": 89,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_3",
+              "category": "extraction",
+              "prompt_tokens": 562,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.439,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 234.02,
+              "decode_tokens": 127,
+              "decode_wall_ms": 789.9,
+              "tok_per_s": 160.78,
+              "steps": 35,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.629,
+              "draft_ms": 281.91,
+              "verify_ms": 503.85,
+              "rollback_ms": 1.59,
+              "rollback_count": 5,
+              "avg_rollback_ms": 0.318,
+              "proposed_drafts": 101,
+              "accepted_drafts": 92,
+              "accept_rate": 0.9109,
+              "proposer_stats": {
+                "primary_steps": 4,
+                "fallback_steps": 30,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 2,
+                    "5": 0,
+                    "6": 2
+                  },
+                  "misses": 31,
+                  "total_hits": 4
+                },
+                "fallback_stats": {
+                  "propose_calls": 31,
+                  "catchup_tokens": 69,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "extraction_4",
+              "category": "extraction",
+              "prompt_tokens": 650,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.459,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 250.82,
+              "decode_tokens": 127,
+              "decode_wall_ms": 774.05,
+              "tok_per_s": 164.071,
+              "steps": 35,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.629,
+              "draft_ms": 279.69,
+              "verify_ms": 490.55,
+              "rollback_ms": 1.59,
+              "rollback_count": 5,
+              "avg_rollback_ms": 0.319,
+              "proposed_drafts": 103,
+              "accepted_drafts": 92,
+              "accept_rate": 0.8932,
+              "proposer_stats": {
+                "primary_steps": 3,
+                "fallback_steps": 32,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 1,
+                    "6": 1
+                  },
+                  "misses": 32,
+                  "total_hits": 3
+                },
+                "fallback_stats": {
+                  "propose_calls": 32,
+                  "catchup_tokens": 68,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_1",
+              "category": "free_prose",
+              "prompt_tokens": 171,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.306,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 133.58,
+              "decode_tokens": 127,
+              "decode_wall_ms": 856.59,
+              "tok_per_s": 148.262,
+              "steps": 49,
+              "b1_fallback_steps": 12,
+              "margin_guard_triggers": 0,
+              "tau": 2.592,
+              "draft_ms": 282.07,
+              "verify_ms": 570.28,
+              "rollback_ms": 1.6,
+              "rollback_count": 5,
+              "avg_rollback_ms": 0.321,
+              "proposed_drafts": 87,
+              "accepted_drafts": 78,
+              "accept_rate": 0.8966,
+              "proposer_stats": {
+                "primary_steps": 5,
+                "fallback_steps": 32,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 3,
+                    "6": 1
+                  },
+                  "misses": 44,
+                  "total_hits": 5
+                },
+                "fallback_stats": {
+                  "propose_calls": 44,
+                  "catchup_tokens": 90,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_2",
+              "category": "free_prose",
+              "prompt_tokens": 126,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 0.953,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 112.68,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1164.6,
+              "tok_per_s": 109.05,
+              "steps": 77,
+              "b1_fallback_steps": 39,
+              "margin_guard_triggers": 0,
+              "tau": 1.649,
+              "draft_ms": 375.87,
+              "verify_ms": 783.18,
+              "rollback_ms": 2.16,
+              "rollback_count": 6,
+              "avg_rollback_ms": 0.359,
+              "proposed_drafts": 58,
+              "accepted_drafts": 50,
+              "accept_rate": 0.8621,
+              "proposer_stats": {
+                "primary_steps": 0,
+                "fallback_steps": 38,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 0,
+                    "5": 0,
+                    "6": 0
+                  },
+                  "misses": 77,
+                  "total_hits": 0
+                },
+                "fallback_stats": {
+                  "propose_calls": 77,
+                  "catchup_tokens": 117,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_3",
+              "category": "free_prose",
+              "prompt_tokens": 120,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 0.949,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 108.08,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1176.17,
+              "tok_per_s": 107.978,
+              "steps": 75,
+              "b1_fallback_steps": 37,
+              "margin_guard_triggers": 0,
+              "tau": 1.693,
+              "draft_ms": 386.97,
+              "verify_ms": 782.11,
+              "rollback_ms": 4.29,
+              "rollback_count": 13,
+              "avg_rollback_ms": 0.33,
+              "proposed_drafts": 69,
+              "accepted_drafts": 52,
+              "accept_rate": 0.7536,
+              "proposer_stats": {
+                "primary_steps": 0,
+                "fallback_steps": 38,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 0,
+                    "5": 0,
+                    "6": 0
+                  },
+                  "misses": 75,
+                  "total_hits": 0
+                },
+                "fallback_stats": {
+                  "propose_calls": 75,
+                  "catchup_tokens": 112,
+                  "k_draft": 3
+                }
+              }
+            },
+            {
+              "prompt_id": "free_prose_4",
+              "category": "free_prose",
+              "prompt_tokens": 125,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.215,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 110.99,
+              "decode_tokens": 127,
+              "decode_wall_ms": 919.24,
+              "tok_per_s": 138.158,
+              "steps": 50,
+              "b1_fallback_steps": 12,
+              "margin_guard_triggers": 0,
+              "tau": 2.54,
+              "draft_ms": 318.14,
+              "verify_ms": 595.84,
+              "rollback_ms": 2.65,
+              "rollback_count": 8,
+              "avg_rollback_ms": 0.332,
+              "proposed_drafts": 93,
+              "accepted_drafts": 77,
+              "accept_rate": 0.828,
+              "proposer_stats": {
+                "primary_steps": 3,
+                "fallback_steps": 35,
+                "primary_stats": {
+                  "hits_by_order": {
+                    "4": 1,
+                    "5": 0,
+                    "6": 2
+                  },
+                  "misses": 47,
+                  "total_hits": 3
+                },
+                "fallback_stats": {
+                  "propose_calls": 47,
+                  "catchup_tokens": 94,
+                  "k_draft": 3
+                }
+              }
+            }
+          ]
+        },
+        "draft_0_8b_conf": {
+          "summary": {
+            "by_category": {
+              "code_edit": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 3071.78,
+                "tok_per_s": 165.38,
+                "speedup_vs_b1": 1.487,
+                "tau": 3.735,
+                "accept_rate": 0.9713,
+                "avg_rollback_ms": 0.33,
+                "exact_parity_all": true
+              },
+              "extraction": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 3062.45,
+                "tok_per_s": 165.88,
+                "speedup_vs_b1": 1.487,
+                "tau": 3.848,
+                "accept_rate": 0.9716,
+                "avg_rollback_ms": 0.324,
+                "exact_parity_all": true
+              },
+              "free_prose": {
+                "prompts": 4,
+                "decode_tokens": 508,
+                "wall_ms": 4104.35,
+                "tok_per_s": 123.77,
+                "speedup_vs_b1": 1.087,
+                "tau": 2.04,
+                "accept_rate": 0.852,
+                "avg_rollback_ms": 0.321,
+                "exact_parity_all": true
+              }
+            },
+            "overall": {
+              "prompts": 12,
+              "decode_tokens": 1524,
+              "wall_ms": 10238.58,
+              "tok_per_s": 148.85,
+              "speedup_vs_b1": 1.327,
+              "tau": 2.948,
+              "accept_rate": 0.9376,
+              "avg_rollback_ms": 0.323,
+              "total_rollback_ms": 13.24,
+              "rollback_count": 41,
+              "exact_parity_all": true
+            }
+          },
+          "per_prompt": [
+            {
+              "prompt_id": "code_edit_1",
+              "category": "code_edit",
+              "prompt_tokens": 530,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.426,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 229.88,
+              "decode_tokens": 127,
+              "decode_wall_ms": 790.45,
+              "tok_per_s": 160.668,
+              "steps": 35,
+              "b1_fallback_steps": 2,
+              "margin_guard_triggers": 0,
+              "tau": 3.629,
+              "draft_ms": 298.05,
+              "verify_ms": 488.87,
+              "rollback_ms": 1.31,
+              "rollback_count": 4,
+              "avg_rollback_ms": 0.326,
+              "proposed_drafts": 99,
+              "accepted_drafts": 92,
+              "accept_rate": 0.9293,
+              "proposer_stats": {
+                "propose_calls": 34,
+                "catchup_tokens": 67,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "code_edit_2",
+              "category": "code_edit",
+              "prompt_tokens": 681,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.581,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 272.37,
+              "decode_tokens": 127,
+              "decode_wall_ms": 747.23,
+              "tok_per_s": 169.962,
+              "steps": 32,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.969,
+              "draft_ms": 284.9,
+              "verify_ms": 460.04,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "avg_rollback_ms": 0.0,
+              "proposed_drafts": 95,
+              "accepted_drafts": 95,
+              "accept_rate": 1.0,
+              "proposer_stats": {
+                "propose_calls": 32,
+                "catchup_tokens": 63,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "code_edit_3",
+              "category": "code_edit",
+              "prompt_tokens": 570,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.436,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 242.48,
+              "decode_tokens": 127,
+              "decode_wall_ms": 790.51,
+              "tok_per_s": 160.656,
+              "steps": 36,
+              "b1_fallback_steps": 2,
+              "margin_guard_triggers": 0,
+              "tau": 3.528,
+              "draft_ms": 299.61,
+              "verify_ms": 487.84,
+              "rollback_ms": 0.67,
+              "rollback_count": 2,
+              "avg_rollback_ms": 0.335,
+              "proposed_drafts": 95,
+              "accepted_drafts": 91,
+              "accept_rate": 0.9579,
+              "proposer_stats": {
+                "propose_calls": 35,
+                "catchup_tokens": 72,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "code_edit_4",
+              "category": "code_edit",
+              "prompt_tokens": 449,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.511,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 207.86,
+              "decode_tokens": 127,
+              "decode_wall_ms": 743.59,
+              "tok_per_s": 170.794,
+              "steps": 33,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.848,
+              "draft_ms": 283.78,
+              "verify_ms": 457.32,
+              "rollback_ms": 0.0,
+              "rollback_count": 0,
+              "avg_rollback_ms": 0.0,
+              "proposed_drafts": 94,
+              "accepted_drafts": 94,
+              "accept_rate": 1.0,
+              "proposer_stats": {
+                "propose_calls": 32,
+                "catchup_tokens": 63,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "extraction_1",
+              "category": "extraction",
+              "prompt_tokens": 762,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.536,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 282.0,
+              "decode_tokens": 127,
+              "decode_wall_ms": 748.28,
+              "tok_per_s": 169.722,
+              "steps": 32,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.969,
+              "draft_ms": 286.93,
+              "verify_ms": 458.87,
+              "rollback_ms": 0.31,
+              "rollback_count": 1,
+              "avg_rollback_ms": 0.309,
+              "proposed_drafts": 96,
+              "accepted_drafts": 95,
+              "accept_rate": 0.9896,
+              "proposer_stats": {
+                "propose_calls": 32,
+                "catchup_tokens": 64,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "extraction_2",
+              "category": "extraction",
+              "prompt_tokens": 877,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.5,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 308.38,
+              "decode_tokens": 127,
+              "decode_wall_ms": 759.3,
+              "tok_per_s": 167.26,
+              "steps": 33,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.848,
+              "draft_ms": 287.09,
+              "verify_ms": 469.81,
+              "rollback_ms": 0.3,
+              "rollback_count": 1,
+              "avg_rollback_ms": 0.3,
+              "proposed_drafts": 96,
+              "accepted_drafts": 94,
+              "accept_rate": 0.9792,
+              "proposer_stats": {
+                "propose_calls": 32,
+                "catchup_tokens": 63,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "extraction_3",
+              "category": "extraction",
+              "prompt_tokens": 562,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.443,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 233.84,
+              "decode_tokens": 127,
+              "decode_wall_ms": 787.33,
+              "tok_per_s": 161.304,
+              "steps": 34,
+              "b1_fallback_steps": 1,
+              "margin_guard_triggers": 0,
+              "tau": 3.735,
+              "draft_ms": 302.53,
+              "verify_ms": 481.12,
+              "rollback_ms": 1.01,
+              "rollback_count": 3,
+              "avg_rollback_ms": 0.336,
+              "proposed_drafts": 96,
+              "accepted_drafts": 93,
+              "accept_rate": 0.9688,
+              "proposer_stats": {
+                "propose_calls": 34,
+                "catchup_tokens": 69,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "extraction_4",
+              "category": "extraction",
+              "prompt_tokens": 650,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.471,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 254.92,
+              "decode_tokens": 127,
+              "decode_wall_ms": 767.54,
+              "tok_per_s": 165.463,
+              "steps": 33,
+              "b1_fallback_steps": 0,
+              "margin_guard_triggers": 0,
+              "tau": 3.848,
+              "draft_ms": 295.64,
+              "verify_ms": 468.74,
+              "rollback_ms": 0.65,
+              "rollback_count": 2,
+              "avg_rollback_ms": 0.325,
+              "proposed_drafts": 99,
+              "accepted_drafts": 94,
+              "accept_rate": 0.9495,
+              "proposer_stats": {
+                "propose_calls": 33,
+                "catchup_tokens": 64,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "free_prose_1",
+              "category": "free_prose",
+              "prompt_tokens": 171,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.306,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 135.18,
+              "decode_tokens": 127,
+              "decode_wall_ms": 856.37,
+              "tok_per_s": 148.301,
+              "steps": 47,
+              "b1_fallback_steps": 11,
+              "margin_guard_triggers": 0,
+              "tau": 2.702,
+              "draft_ms": 306.76,
+              "verify_ms": 546.29,
+              "rollback_ms": 0.34,
+              "rollback_count": 1,
+              "avg_rollback_ms": 0.343,
+              "proposed_drafts": 82,
+              "accepted_drafts": 80,
+              "accept_rate": 0.9756,
+              "proposer_stats": {
+                "propose_calls": 47,
+                "catchup_tokens": 84,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "free_prose_2",
+              "category": "free_prose",
+              "prompt_tokens": 126,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 0.968,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 113.17,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1146.22,
+              "tok_per_s": 110.799,
+              "steps": 77,
+              "b1_fallback_steps": 39,
+              "margin_guard_triggers": 0,
+              "tau": 1.649,
+              "draft_ms": 366.51,
+              "verify_ms": 774.07,
+              "rollback_ms": 1.95,
+              "rollback_count": 6,
+              "avg_rollback_ms": 0.324,
+              "proposed_drafts": 58,
+              "accepted_drafts": 50,
+              "accept_rate": 0.8621,
+              "proposer_stats": {
+                "propose_calls": 77,
+                "catchup_tokens": 117,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "free_prose_3",
+              "category": "free_prose",
+              "prompt_tokens": 120,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 0.961,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 107.12,
+              "decode_tokens": 127,
+              "decode_wall_ms": 1161.29,
+              "tok_per_s": 109.361,
+              "steps": 75,
+              "b1_fallback_steps": 37,
+              "margin_guard_triggers": 0,
+              "tau": 1.693,
+              "draft_ms": 380.99,
+              "verify_ms": 773.17,
+              "rollback_ms": 4.17,
+              "rollback_count": 13,
+              "avg_rollback_ms": 0.321,
+              "proposed_drafts": 69,
+              "accepted_drafts": 52,
+              "accept_rate": 0.7536,
+              "proposer_stats": {
+                "propose_calls": 75,
+                "catchup_tokens": 112,
+                "k_draft": 3
+              }
+            },
+            {
+              "prompt_id": "free_prose_4",
+              "category": "free_prose",
+              "prompt_tokens": 125,
+              "generated_tokens": 128,
+              "speedup_vs_b1": 1.188,
+              "exact_parity": true,
+              "first_mismatch_idx": null,
+              "prefill_ms": 110.24,
+              "decode_tokens": 127,
+              "decode_wall_ms": 940.47,
+              "tok_per_s": 135.038,
+              "steps": 50,
+              "b1_fallback_steps": 12,
+              "margin_guard_triggers": 0,
+              "tau": 2.54,
+              "draft_ms": 338.55,
+              "verify_ms": 596.84,
+              "rollback_ms": 2.53,
+              "rollback_count": 8,
+              "avg_rollback_ms": 0.316,
+              "proposed_drafts": 95,
+              "accepted_drafts": 77,
+              "accept_rate": 0.8105,
+              "proposer_stats": {
+                "propose_calls": 50,
+                "catchup_tokens": 90,
+                "k_draft": 3
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

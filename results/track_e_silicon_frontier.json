@@ -1,0 +1,2014 @@
+{
+  "track": "E_silicon_frontier",
+  "timestamp_utc": "2026-11-21T00:03:15.749720+00:00",
+  "quick_mode": false,
+  "skip_models": false,
+  "elapsed_total_s": 82.11,
+  "environment": {
+    "python": "python3",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "mlx_version": "0.31.2",
+    "device_info": {
+      "device_name": "Apple M5 Max",
+      "max_recommended_working_set_size": 115448725504,
+      "memory_size": 137438953472,
+      "architecture": "applegpu_g17s",
+      "max_buffer_length": 86586540032,
+      "resource_limit": 499000
+    }
+  },
+  "pure_read_and_slc": {
+    "verified": {
+      "uint4_exact_match": true,
+      "float4_rel_err": 0.0,
+      "copy_exact_match": true
+    },
+    "headline": {
+      "largest_buffer_mb": 4096,
+      "pure_read_uint4_gb_s": 507.83,
+      "pure_read_float4_gb_s": 505.68,
+      "pure_read_best_gb_s": 507.83,
+      "copy_rw_custom_gb_s": 500.01,
+      "copy_rw_mlx_gb_s": 518.77,
+      "pure_read_vs_spec_614_4_pct": 82.65,
+      "pure_read_vs_copy_ratio": 1.016,
+      "slc_peak_gb_s": 884.1,
+      "estimated_slc_knee_mb": 48
+    },
+    "dram": {
+      "best_num_tg": 256,
+      "tg_sweep_1024MB": {
+        "256": {
+          "median_ms": 2.177,
+          "gb_s": 493.23
+        },
+        "512": {
+          "median_ms": 2.2899,
+          "gb_s": 468.91
+        },
+        "1024": {
+          "median_ms": 2.391,
+          "gb_s": 449.08
+        },
+        "2048": {
+          "median_ms": 2.2697,
+          "gb_s": 473.08
+        },
+        "4096": {
+          "median_ms": 2.3813,
+          "gb_s": 450.91
+        }
+      },
+      "cold_dram_comparison": {
+        "512MB": {
+          "buffer_mb": 512,
+          "pure_read_uint4": {
+            "median_ms": 1.1967,
+            "min_ms": 1.1323,
+            "median_gb_s": 448.64,
+            "peak_gb_s": 474.13
+          },
+          "pure_read_float4": {
+            "median_ms": 1.2297,
+            "min_ms": 1.1915,
+            "median_gb_s": 436.6,
+            "peak_gb_s": 450.57
+          },
+          "copy_rw_custom_uint4": {
+            "median_ms": 2.2502,
+            "min_ms": 2.1675,
+            "median_gb_s": 477.17,
+            "peak_gb_s": 495.37
+          },
+          "copy_rw_mlx_add": {
+            "median_ms": 2.28,
+            "min_ms": 2.2147,
+            "median_gb_s": 470.93,
+            "peak_gb_s": 484.83
+          }
+        },
+        "1024MB": {
+          "buffer_mb": 1024,
+          "pure_read_uint4": {
+            "median_ms": 2.1465,
+            "min_ms": 2.0995,
+            "median_gb_s": 500.22,
+            "peak_gb_s": 511.43
+          },
+          "pure_read_float4": {
+            "median_ms": 2.2812,
+            "min_ms": 2.0735,
+            "median_gb_s": 470.7,
+            "peak_gb_s": 517.83
+          },
+          "copy_rw_custom_uint4": {
+            "median_ms": 4.8383,
+            "min_ms": 4.3754,
+            "median_gb_s": 443.85,
+            "peak_gb_s": 490.81
+          },
+          "copy_rw_mlx_add": {
+            "median_ms": 4.287,
+            "min_ms": 4.1479,
+            "median_gb_s": 500.92,
+            "peak_gb_s": 517.73
+          }
+        },
+        "2048MB": {
+          "buffer_mb": 2048,
+          "pure_read_uint4": {
+            "median_ms": 4.4222,
+            "min_ms": 4.0758,
+            "median_gb_s": 485.61,
+            "peak_gb_s": 526.89
+          },
+          "pure_read_float4": {
+            "median_ms": 4.541,
+            "min_ms": 4.446,
+            "median_gb_s": 472.91,
+            "peak_gb_s": 483.01
+          },
+          "copy_rw_custom_uint4": {
+            "median_ms": 8.719,
+            "min_ms": 8.4362,
+            "median_gb_s": 492.6,
+            "peak_gb_s": 509.11
+          },
+          "copy_rw_mlx_add": {
+            "median_ms": 8.2946,
+            "min_ms": 8.179,
+            "median_gb_s": 517.8,
+            "peak_gb_s": 525.12
+          }
+        },
+        "4096MB": {
+          "buffer_mb": 4096,
+          "pure_read_uint4": {
+            "median_ms": 8.4575,
+            "min_ms": 8.1618,
+            "median_gb_s": 507.83,
+            "peak_gb_s": 526.23
+          },
+          "pure_read_float4": {
+            "median_ms": 8.4934,
+            "min_ms": 8.2018,
+            "median_gb_s": 505.68,
+            "peak_gb_s": 523.66
+          },
+          "copy_rw_custom_uint4": {
+            "median_ms": 17.1794,
+            "min_ms": 16.9315,
+            "median_gb_s": 500.01,
+            "peak_gb_s": 507.33
+          },
+          "copy_rw_mlx_add": {
+            "median_ms": 16.5584,
+            "min_ms": 16.241,
+            "median_gb_s": 518.77,
+            "peak_gb_s": 528.9
+          }
+        }
+      }
+    },
+    "slc": {
+      "num_tg": 256,
+      "sweep": [
+        {
+          "size_mb": 4,
+          "passes": 64,
+          "total_read_mb": 256,
+          "median_ms": 0.5396,
+          "median_gb_s": 497.49,
+          "peak_gb_s": 523.9
+        },
+        {
+          "size_mb": 8,
+          "passes": 64,
+          "total_read_mb": 512,
+          "median_ms": 0.6072,
+          "median_gb_s": 884.1,
+          "peak_gb_s": 897.28
+        },
+        {
+          "size_mb": 16,
+          "passes": 64,
+          "total_read_mb": 1024,
+          "median_ms": 1.4949,
+          "median_gb_s": 718.26,
+          "peak_gb_s": 744.17
+        },
+        {
+          "size_mb": 24,
+          "passes": 24,
+          "total_read_mb": 576,
+          "median_ms": 0.8575,
+          "median_gb_s": 704.32,
+          "peak_gb_s": 726.85
+        },
+        {
+          "size_mb": 32,
+          "passes": 24,
+          "total_read_mb": 768,
+          "median_ms": 1.0731,
+          "median_gb_s": 750.46,
+          "peak_gb_s": 769.52
+        },
+        {
+          "size_mb": 48,
+          "passes": 24,
+          "total_read_mb": 1152,
+          "median_ms": 1.5988,
+          "median_gb_s": 755.53,
+          "peak_gb_s": 778.12
+        },
+        {
+          "size_mb": 64,
+          "passes": 24,
+          "total_read_mb": 1536,
+          "median_ms": 2.7719,
+          "median_gb_s": 581.06,
+          "peak_gb_s": 592.31
+        },
+        {
+          "size_mb": 96,
+          "passes": 8,
+          "total_read_mb": 768,
+          "median_ms": 1.5984,
+          "median_gb_s": 503.83,
+          "peak_gb_s": 521.26
+        },
+        {
+          "size_mb": 128,
+          "passes": 8,
+          "total_read_mb": 1024,
+          "median_ms": 2.2081,
+          "median_gb_s": 486.27,
+          "peak_gb_s": 505.38
+        },
+        {
+          "size_mb": 256,
+          "passes": 8,
+          "total_read_mb": 2048,
+          "median_ms": 4.93,
+          "median_gb_s": 435.59,
+          "peak_gb_s": 523.72
+        },
+        {
+          "size_mb": 512,
+          "passes": 4,
+          "total_read_mb": 2048,
+          "median_ms": 4.9168,
+          "median_gb_s": 436.77,
+          "peak_gb_s": 512.51
+        },
+        {
+          "size_mb": 1024,
+          "passes": 2,
+          "total_read_mb": 2048,
+          "median_ms": 4.6326,
+          "median_gb_s": 463.56,
+          "peak_gb_s": 512.25
+        },
+        {
+          "size_mb": 2048,
+          "passes": 2,
+          "total_read_mb": 4096,
+          "median_ms": 8.3632,
+          "median_gb_s": 513.55,
+          "peak_gb_s": 532.01
+        },
+        {
+          "size_mb": 4096,
+          "passes": 2,
+          "total_read_mb": 8192,
+          "median_ms": 16.9394,
+          "median_gb_s": 507.1,
+          "peak_gb_s": 518.0
+        }
+      ],
+      "slc_peak_gb_s": 884.1,
+      "dram_floor_gb_s": 507.1,
+      "estimated_slc_knee_mb": 48
+    }
+  },
+  "cpu_sme2_and_l2": {
+    "verified_exact": true,
+    "cpu_topology": {
+      "brand": "Apple M5 Max",
+      "total_cores": 18,
+      "super_cores": 6,
+      "super_l2_mb": 16.0,
+      "super_cores_per_l2": 6,
+      "perf_cores": 12,
+      "perf_l2_mb": 8.0,
+      "perf_cores_per_l2": 6,
+      "sme_svl_bytes": 64,
+      "sme_svl_bits": 512
+    },
+    "sme2_peak_scaling": [
+      {
+        "threads": 1,
+        "fp32_tflops": 2.162,
+        "fp16_za32_tflops": 2.172,
+        "fp16_za16_tflops": 4.338,
+        "bf16_za32_tflops": 2.171,
+        "int8_tops": 4.311
+      },
+      {
+        "threads": 2,
+        "fp32_tflops": 2.289,
+        "fp16_za32_tflops": 2.436,
+        "fp16_za16_tflops": 4.929,
+        "bf16_za32_tflops": 2.442,
+        "int8_tops": 4.936
+      },
+      {
+        "threads": 3,
+        "fp32_tflops": 2.915,
+        "fp16_za32_tflops": 2.797,
+        "fp16_za16_tflops": 5.601,
+        "bf16_za32_tflops": 2.812,
+        "int8_tops": 5.603
+      },
+      {
+        "threads": 4,
+        "fp32_tflops": 2.968,
+        "fp16_za32_tflops": 3.063,
+        "fp16_za16_tflops": 5.998,
+        "bf16_za32_tflops": 3.027,
+        "int8_tops": 5.993
+      },
+      {
+        "threads": 6,
+        "fp32_tflops": 3.12,
+        "fp16_za32_tflops": 3.129,
+        "fp16_za16_tflops": 6.275,
+        "bf16_za32_tflops": 3.141,
+        "int8_tops": 6.256
+      },
+      {
+        "threads": 8,
+        "fp32_tflops": 3.181,
+        "fp16_za32_tflops": 3.153,
+        "fp16_za16_tflops": 5.586,
+        "bf16_za32_tflops": 2.751,
+        "int8_tops": 5.519
+      },
+      {
+        "threads": 12,
+        "fp32_tflops": 3.141,
+        "fp16_za32_tflops": 3.199,
+        "fp16_za16_tflops": 6.322,
+        "bf16_za32_tflops": 3.184,
+        "int8_tops": 6.327
+      },
+      {
+        "threads": 18,
+        "fp32_tflops": 3.197,
+        "fp16_za32_tflops": 3.178,
+        "fp16_za16_tflops": 6.39,
+        "bf16_za32_tflops": 3.212,
+        "int8_tops": 6.408
+      }
+    ],
+    "sme2_background_qos_fp32_tflops": {
+      "t1": 0.246,
+      "t6": 0.21,
+      "t12": 0.242
+    },
+    "sme2_inferred_unit_ratio_18t_over_1t": {
+      "fp32": 1.48,
+      "fp16_za32": 1.46,
+      "fp16_za16": 1.47,
+      "bf16_za32": 1.48,
+      "int8": 1.49
+    },
+    "sme2_real_tiled_gemm_512": {
+      "fp32_1t_tflops": 0.431,
+      "int8_1t_tops": 1.681
+    },
+    "accelerate_cblas_sgemm": {
+      "multi_threaded_N4096_tflops": 1.754,
+      "single_thread_parallel_N1024_tflops": {
+        "t1": 1.763,
+        "t2": 1.886,
+        "t6": 2.774,
+        "t12": 1.869,
+        "t18": 2.079
+      }
+    },
+    "bnns_fc_1024x2048x2048": {
+      "fp32": {
+        "supported": true,
+        "tflops": 1.6
+      },
+      "fp16": {
+        "supported": true,
+        "tflops": 0.676
+      },
+      "bf16": {
+        "supported": true,
+        "tflops": 0.629
+      },
+      "int8": {
+        "supported": true,
+        "tops": 2.076
+      }
+    },
+    "cpu_dram_read_bw_512MB_gb_s": {
+      "t1": 90.37,
+      "t2": 161.47,
+      "t4": 168.51,
+      "t6": 163.68,
+      "t8": 220.4,
+      "t12": 275.22,
+      "t18": 274.98
+    },
+    "cpu_l2_slc_sweep": [
+      {
+        "size_mb": 1,
+        "t1_gb_s": 134.58,
+        "t6_gb_s": 771.55,
+        "t18_gb_s": 1256.03
+      },
+      {
+        "size_mb": 2,
+        "t1_gb_s": 121.22,
+        "t6_gb_s": 695.18,
+        "t18_gb_s": 2432.34
+      },
+      {
+        "size_mb": 4,
+        "t1_gb_s": 117.06,
+        "t6_gb_s": 685.32,
+        "t18_gb_s": 2096.3
+      },
+      {
+        "size_mb": 8,
+        "t1_gb_s": 107.48,
+        "t6_gb_s": 638.52,
+        "t18_gb_s": 1098.19
+      },
+      {
+        "size_mb": 12,
+        "t1_gb_s": 101.77,
+        "t6_gb_s": 575.79,
+        "t18_gb_s": 1271.2
+      },
+      {
+        "size_mb": 16,
+        "t1_gb_s": 103.17,
+        "t6_gb_s": 485.85,
+        "t18_gb_s": 4185.68
+      },
+      {
+        "size_mb": 20,
+        "t1_gb_s": 100.88,
+        "t6_gb_s": 325.33,
+        "t18_gb_s": 1038.08
+      },
+      {
+        "size_mb": 24,
+        "t1_gb_s": 96.78,
+        "t6_gb_s": 268.05,
+        "t18_gb_s": 1980.14
+      },
+      {
+        "size_mb": 32,
+        "t1_gb_s": 95.14,
+        "t6_gb_s": 232.68,
+        "t18_gb_s": 702.03
+      },
+      {
+        "size_mb": 48,
+        "t1_gb_s": 93.86,
+        "t6_gb_s": 197.93,
+        "t18_gb_s": 435.83
+      },
+      {
+        "size_mb": 64,
+        "t1_gb_s": 91.85,
+        "t6_gb_s": 227.56,
+        "t18_gb_s": 327.18
+      },
+      {
+        "size_mb": 128,
+        "t1_gb_s": 89.1,
+        "t6_gb_s": 207.25,
+        "t18_gb_s": 254.89
+      },
+      {
+        "size_mb": 256,
+        "t1_gb_s": 90.05,
+        "t6_gb_s": 185.48,
+        "t18_gb_s": 268.13
+      },
+      {
+        "size_mb": 512,
+        "t1_gb_s": 85.51,
+        "t6_gb_s": 194.63,
+        "t18_gb_s": 251.79
+      }
+    ],
+    "l2_draft_heads": {
+      "mlp_4096_512_4096_int8_4p2MB": {
+        "b1_t6_us": 39.5,
+        "b1_t18_us": 97.4,
+        "b4_t6_us": 75.3
+      },
+      "mlp_4096_1024_4096_int8_8p4MB": {
+        "b1_t6_us": 53.3,
+        "b1_t18_us": 101.7,
+        "b4_t6_us": 113.6
+      },
+      "mlp_4096_1024_4096_fp32_33p6MB_cblas": {
+        "b1_us": 217.6,
+        "b4_us": 766.5
+      },
+      "shortlist_4096_2048_int8_8p4MB": {
+        "b1_t6_us": 130.0,
+        "b1_t18_us": 252.3
+      }
+    },
+    "concurrent_gpu_interference": {
+      "draft_mlp_4096_512_4096_int8_4p2MB": {
+        "cpu_solo": {
+          "D": 4096,
+          "H": 512,
+          "B": 1,
+          "threads": 6,
+          "weight_mb": 4.19,
+          "iters": 42720,
+          "elapsed_s": 4.002,
+          "mean_us": 34.89
+        },
+        "gpu_solo": {
+          "iters": 878,
+          "elapsed_s": 4.0021,
+          "gpu_pure_read_gb_s": 471.13
+        },
+        "cpu_concurrent": {
+          "D": 4096,
+          "H": 512,
+          "B": 1,
+          "threads": 6,
+          "weight_mb": 4.19,
+          "iters": 42120,
+          "elapsed_s": 4.0019,
+          "mean_us": 35.41
+        },
+        "gpu_concurrent": {
+          "iters": 934,
+          "elapsed_s": 4.0002,
+          "gpu_pure_read_gb_s": 501.41
+        },
+        "gpu_bw_retention_pct": 106.43,
+        "cpu_latency_ratio_concurrent_vs_solo": 1.015
+      },
+      "draft_mlp_4096_1024_4096_int8_8p4MB": {
+        "cpu_solo": {
+          "D": 4096,
+          "H": 1024,
+          "B": 1,
+          "threads": 6,
+          "weight_mb": 8.39,
+          "iters": 27880,
+          "elapsed_s": 4.0016,
+          "mean_us": 44.6
+        },
+        "gpu_solo": {
+          "iters": 884,
+          "elapsed_s": 4.0015,
+          "gpu_pure_read_gb_s": 474.42
+        },
+        "cpu_concurrent": {
+          "D": 4096,
+          "H": 1024,
+          "B": 1,
+          "threads": 6,
+          "weight_mb": 8.39,
+          "iters": 23080,
+          "elapsed_s": 4.0009,
+          "mean_us": 64.25
+        },
+        "gpu_concurrent": {
+          "iters": 935,
+          "elapsed_s": 4.0015,
+          "gpu_pure_read_gb_s": 501.78
+        },
+        "gpu_bw_retention_pct": 105.77,
+        "cpu_latency_ratio_concurrent_vs_solo": 1.441
+      }
+    }
+  },
+  "dispatch_tax_and_controls": {
+    "metal_dispatch_tax": {
+      "serial_dependent_chain": [
+        {
+          "n_dispatches": 200,
+          "median_eval_ms": 0.4734,
+          "min_eval_ms": 0.4525,
+          "us_per_dispatch_gross": 2.367,
+          "min_us_per_dispatch_gross": 2.262
+        },
+        {
+          "n_dispatches": 500,
+          "median_eval_ms": 0.883,
+          "min_eval_ms": 0.861,
+          "us_per_dispatch_gross": 1.766,
+          "min_us_per_dispatch_gross": 1.722
+        },
+        {
+          "n_dispatches": 1000,
+          "median_eval_ms": 1.6062,
+          "min_eval_ms": 1.552,
+          "us_per_dispatch_gross": 1.606,
+          "min_us_per_dispatch_gross": 1.552
+        },
+        {
+          "n_dispatches": 2000,
+          "median_eval_ms": 3.0194,
+          "min_eval_ms": 2.9058,
+          "us_per_dispatch_gross": 1.51,
+          "min_us_per_dispatch_gross": 1.453
+        },
+        {
+          "n_dispatches": 4000,
+          "median_eval_ms": 6.242,
+          "min_eval_ms": 5.7257,
+          "us_per_dispatch_gross": 1.56,
+          "min_us_per_dispatch_gross": 1.431
+        }
+      ],
+      "linear_fit_serial_us_per_dispatch": 1.519,
+      "linear_fit_cb_commit_intercept_us": 106.03,
+      "serial_2000_gross_us_per_dispatch": 1.51,
+      "serial_2000_total_ms": 3.0194,
+      "independent_2000_total_ms": 1.9378,
+      "independent_2000_us_per_dispatch": 0.969,
+      "stock_mlx_uncompiled_2000_total_ms": 2.9922,
+      "stock_mlx_uncompiled_2000_us_per_dispatch": 1.496,
+      "host_sync_roundtrip_us_per_commit": 148.58
+    },
+    "model_decode_op_audit": {
+      "qwen35_9b_4bit": {
+        "model_id": "mlx-community/Qwen3.5-9B-4bit",
+        "load_s": 1.17,
+        "decode_b1_median_ms": 11.224,
+        "decode_b1_min_ms": 10.889,
+        "decode_b1_tok_s": 89.09,
+        "graph": {
+          "total_mlx_primitives": 1131,
+          "estimated_gpu_kernel_dispatches": 799,
+          "zero_copy_view_or_meta_ops": 332,
+          "op_histogram": {
+            "QuantizedMatmul": 249,
+            "Reshape": 160,
+            "RMSNorm": 153,
+            "Add": 64,
+            "Multiply": 56,
+            "Slice": 56,
+            "Broadcast": 48,
+            "Split": 32,
+            "Sigmoid": 32,
+            "CompiledSigmoidBroadcastBroadcastMultiplyBroadcastBroadcastMultiply": 32,
+            "Transpose": 32,
+            "Concatenate": 24,
+            "Convolution": 24,
+            "CompiledSigmoidBroadcastBroadcastMultiply": 24,
+            "CompiledExpNegativeBroadcastBroadcastAddBroadcastBroadcastLogAddExpAsTypeBroadcastBroadcastMultiplyExp": 24,
+            "CustomKernel": 24,
+            "CompiledAsTypeSigmoidBroadcastBroadcastMultiplyAsTypeBroadcastBroadcastMultiplyAsType": 24,
+            "Contiguous": 24,
+            "RoPE": 16,
+            "SliceUpdate": 16,
+            "ScaledDotProductAttention": 8,
+            "Squeeze": 4,
+            "Gather": 3,
+            "Quantize": 1,
+            "ArgReduce": 1
+          }
+        },
+        "implied_dispatch_tax_serial_ms": 1.214,
+        "implied_dispatch_tax_serial_pct_of_step": 10.8,
+        "implied_dispatch_tax_indep_ms": 0.774,
+        "implied_dispatch_tax_indep_pct_of_step": 6.9,
+        "implied_if_all_primitives_dispatched_ms": 1.718
+      },
+      "qwen36_35b_a3b_4bit": {
+        "model_id": "mlx-community/Qwen3.6-35B-A3B-4bit",
+        "load_s": 1.37,
+        "decode_b1_median_ms": 8.769,
+        "decode_b1_min_ms": 8.563,
+        "decode_b1_tok_s": 114.04,
+        "graph": {
+          "total_mlx_primitives": 2691,
+          "estimated_gpu_kernel_dispatches": 1757,
+          "zero_copy_view_or_meta_ops": 934,
+          "op_histogram": {
+            "QuantizedMatmul": 391,
+            "Reshape": 320,
+            "Broadcast": 260,
+            "RMSNorm": 191,
+            "Multiply": 150,
+            "Add": 120,
+            "Arange": 120,
+            "GatherQMM": 120,
+            "Slice": 110,
+            "Squeeze": 84,
+            "Sigmoid": 80,
+            "ExpandDims": 80,
+            "CompiledSigmoidBroadcastBroadcastMultiplyBroadcastBroadcastMultiply": 80,
+            "Sum": 80,
+            "Split": 40,
+            "Softmax": 40,
+            "ArgPartition": 40,
+            "GatherAxis": 40,
+            "Divide": 40,
+            "Transpose": 40,
+            "Concatenate": 30,
+            "Convolution": 30,
+            "CompiledSigmoidBroadcastBroadcastMultiply": 30,
+            "CompiledAsTypeExpNegativeBroadcastBroadcastAddBroadcastBroadcastLogAddExpAsTypeBroadcastBroadcastMultiplyExp": 30,
+            "CustomKernel": 30,
+            "CompiledAsTypeSigmoidBroadcastBroadcastMultiplyAsTypeBroadcastBroadcastMultiplyAsType": 30,
+            "Contiguous": 30,
+            "RoPE": 20,
+            "SliceUpdate": 20,
+            "ScaledDotProductAttention": 10,
+            "Gather": 3,
+            "Quantize": 1,
+            "ArgReduce": 1
+          }
+        },
+        "implied_dispatch_tax_serial_ms": 2.669,
+        "implied_dispatch_tax_serial_pct_of_step": 30.4,
+        "implied_dispatch_tax_indep_ms": 1.703,
+        "implied_dispatch_tax_indep_pct_of_step": 19.4,
+        "implied_if_all_primitives_dispatched_ms": 4.088
+      }
+    },
+    "fable_reshape_and_controls": {
+      "q4_weight_mb": 301.99,
+      "fp16_weight_mb": 1073.74,
+      "reshape_equivalence_checks": {
+        "(4,16,4096)": {
+          "max_abs_err": 0.0,
+          "rel_err": 0.0,
+          "allclose_1e_2": true
+        },
+        "(2,32,4096)": {
+          "max_abs_err": 0.0,
+          "rel_err": 0.0,
+          "allclose_1e_2": true
+        },
+        "(8,8,4096)": {
+          "max_abs_err": 0.0,
+          "rel_err": 0.0,
+          "allclose_1e_2": true
+        },
+        "pad_M65_first64": {
+          "max_abs_err": 0.001465,
+          "rel_err": 0.002385,
+          "allclose_1e_2": true
+        }
+      },
+      "q4_32layer_4096": {
+        "M1": {
+          "shape": [
+            1,
+            4096
+          ],
+          "effective_rows": 1,
+          "median_ms": 0.8726,
+          "min_ms": 0.8431,
+          "effective_gb_s": 346.09,
+          "effective_tflops": 1.23
+        },
+        "M16": {
+          "shape": [
+            16,
+            4096
+          ],
+          "effective_rows": 16,
+          "median_ms": 3.1371,
+          "min_ms": 3.0678,
+          "effective_gb_s": 96.26,
+          "effective_tflops": 5.48
+        },
+        "M32": {
+          "shape": [
+            32,
+            4096
+          ],
+          "effective_rows": 32,
+          "median_ms": 3.145,
+          "min_ms": 3.0795,
+          "effective_gb_s": 96.02,
+          "effective_tflops": 10.93
+        },
+        "M64_flat": {
+          "shape": [
+            64,
+            4096
+          ],
+          "effective_rows": 64,
+          "median_ms": 5.5141,
+          "min_ms": 5.4173,
+          "effective_gb_s": 54.77,
+          "effective_tflops": 12.46
+        },
+        "M64_reshape_4x16": {
+          "shape": [
+            4,
+            16,
+            4096
+          ],
+          "effective_rows": 64,
+          "median_ms": 5.4763,
+          "min_ms": 5.4192,
+          "effective_gb_s": 55.14,
+          "effective_tflops": 12.55
+        },
+        "M64_reshape_2x32": {
+          "shape": [
+            2,
+            32,
+            4096
+          ],
+          "effective_rows": 64,
+          "median_ms": 5.4596,
+          "min_ms": 5.4097,
+          "effective_gb_s": 55.31,
+          "effective_tflops": 12.59
+        },
+        "M64_reshape_8x8": {
+          "shape": [
+            8,
+            8,
+            4096
+          ],
+          "effective_rows": 64,
+          "median_ms": 5.4895,
+          "min_ms": 5.3986,
+          "effective_gb_s": 55.01,
+          "effective_tflops": 12.52
+        },
+        "M65_pad1": {
+          "shape": [
+            65,
+            4096
+          ],
+          "effective_rows": 65,
+          "median_ms": 3.9168,
+          "min_ms": 3.8469,
+          "effective_gb_s": 77.1,
+          "effective_tflops": 17.82
+        },
+        "M128": {
+          "shape": [
+            128,
+            4096
+          ],
+          "effective_rows": 128,
+          "median_ms": 3.9232,
+          "min_ms": 3.8677,
+          "effective_gb_s": 76.98,
+          "effective_tflops": 35.03
+        },
+        "M256": {
+          "shape": [
+            256,
+            4096
+          ],
+          "effective_rows": 256,
+          "median_ms": 6.3788,
+          "min_ms": 6.3508,
+          "effective_gb_s": 47.34,
+          "effective_tflops": 43.09
+        }
+      },
+      "dense_fp16_control_32layer_4096": {
+        "M1": {
+          "shape": [
+            1,
+            4096
+          ],
+          "effective_rows": 1,
+          "median_ms": 3.0851,
+          "min_ms": 3.0406,
+          "effective_gb_s": 348.04,
+          "effective_tflops": 0.35
+        },
+        "M16": {
+          "shape": [
+            16,
+            4096
+          ],
+          "effective_rows": 16,
+          "median_ms": 4.2492,
+          "min_ms": 4.2102,
+          "effective_gb_s": 252.69,
+          "effective_tflops": 4.04
+        },
+        "M32": {
+          "shape": [
+            32,
+            4096
+          ],
+          "effective_rows": 32,
+          "median_ms": 3.947,
+          "min_ms": 3.8911,
+          "effective_gb_s": 272.04,
+          "effective_tflops": 8.71
+        },
+        "M64_flat": {
+          "shape": [
+            64,
+            4096
+          ],
+          "effective_rows": 64,
+          "median_ms": 3.7766,
+          "min_ms": 3.7035,
+          "effective_gb_s": 284.32,
+          "effective_tflops": 18.2
+        },
+        "M64_reshape_4x16": {
+          "shape": [
+            4,
+            16,
+            4096
+          ],
+          "effective_rows": 64,
+          "median_ms": 3.7899,
+          "min_ms": 3.7333,
+          "effective_gb_s": 283.32,
+          "effective_tflops": 18.13
+        },
+        "M65_pad1": {
+          "shape": [
+            65,
+            4096
+          ],
+          "effective_rows": 65,
+          "median_ms": 3.8857,
+          "min_ms": 3.8108,
+          "effective_gb_s": 276.33,
+          "effective_tflops": 17.96
+        },
+        "M128": {
+          "shape": [
+            128,
+            4096
+          ],
+          "effective_rows": 128,
+          "median_ms": 3.7923,
+          "min_ms": 3.6821,
+          "effective_gb_s": 283.14,
+          "effective_tflops": 36.24
+        },
+        "M256": {
+          "shape": [
+            256,
+            4096
+          ],
+          "effective_rows": 256,
+          "median_ms": 5.9338,
+          "min_ms": 5.8472,
+          "effective_gb_s": 180.95,
+          "effective_tflops": 46.32
+        }
+      },
+      "glm_iso_byte_wider_N_control": {
+        "N4096_K4096": {
+          "weight_mb": 301.99,
+          "n_tg_bn64": 64,
+          "rows": {
+            "M16": {
+              "median_ms": 2.6637,
+              "effective_gb_s": 113.37,
+              "effective_tflops": 6.45
+            },
+            "M32": {
+              "median_ms": 2.6576,
+              "effective_gb_s": 113.63,
+              "effective_tflops": 12.93
+            },
+            "M64": {
+              "median_ms": 4.9578,
+              "effective_gb_s": 60.91,
+              "effective_tflops": 13.86
+            },
+            "M65": {
+              "median_ms": 2.892,
+              "effective_gb_s": 104.42,
+              "effective_tflops": 24.13
+            },
+            "M128": {
+              "median_ms": 2.978,
+              "effective_gb_s": 101.41,
+              "effective_tflops": 46.15
+            }
+          }
+        },
+        "N8192_K2048": {
+          "weight_mb": 301.99,
+          "n_tg_bn64": 128,
+          "rows": {
+            "M16": {
+              "median_ms": 2.8229,
+              "effective_gb_s": 106.98,
+              "effective_tflops": 6.09
+            },
+            "M32": {
+              "median_ms": 2.5958,
+              "effective_gb_s": 116.34,
+              "effective_tflops": 13.24
+            },
+            "M64": {
+              "median_ms": 2.1905,
+              "effective_gb_s": 137.86,
+              "effective_tflops": 31.37
+            },
+            "M65": {
+              "median_ms": 3.0072,
+              "effective_gb_s": 100.42,
+              "effective_tflops": 23.21
+            },
+            "M128": {
+              "median_ms": 3.116,
+              "effective_gb_s": 96.92,
+              "effective_tflops": 44.11
+            }
+          }
+        },
+        "N16384_K1024": {
+          "weight_mb": 301.99,
+          "n_tg_bn64": 256,
+          "rows": {
+            "M16": {
+              "median_ms": 1.6714,
+              "effective_gb_s": 180.68,
+              "effective_tflops": 10.28
+            },
+            "M32": {
+              "median_ms": 1.8793,
+              "effective_gb_s": 160.69,
+              "effective_tflops": 18.28
+            },
+            "M64": {
+              "median_ms": 2.4975,
+              "effective_gb_s": 120.92,
+              "effective_tflops": 27.52
+            },
+            "M65": {
+              "median_ms": 2.8605,
+              "effective_gb_s": 105.57,
+              "effective_tflops": 24.4
+            },
+            "M128": {
+              "median_ms": 3.5573,
+              "effective_gb_s": 84.89,
+              "effective_tflops": 38.64
+            }
+          }
+        }
+      },
+      "verdicts": {
+        "fable_m64_flat_ms": 5.5141,
+        "fable_m64_4x16_ms": 5.4763,
+        "fable_4x16_speedup_vs_flat": 1.007,
+        "fable_30min_prediction_le_3p8ms": false,
+        "m65_pad1_ms": 3.9168,
+        "m128_q4_ms": 3.9232,
+        "dense_fp16_has_m64_valley": false,
+        "dense_fp16_m64_vs_m128_ms": [
+          3.7766,
+          3.7923
+        ]
+      }
+    }
+  },
+  "ane_coreml": {
+    "coremltools_installed": false,
+    "method": "Zero-dependency pure-Python CoreML NeuralNetwork v7 FP16 protobuf + xcrun coremlcompiler + Swift MLModel/MLComputePlan",
+    "device_info": {
+      "available_compute_devices": [
+        "NeuralEngine(2cores)",
+        "GPU",
+        "CPU"
+      ],
+      "neural_engine_cores": 2
+    },
+    "models": {
+      "tiny_512_s1": {
+        "name": "tiny_512x512_s1",
+        "dims": [
+          [
+            512,
+            512
+          ]
+        ],
+        "seq_len": 1,
+        "fp16_io": true,
+        "total_params": 262144,
+        "weight_fp16_mb": 0.52,
+        "flops_per_call": 524288,
+        "runs": {
+          "ane": {
+            "c_in": 512,
+            "compute_plan": {
+              "ane_layers": 0,
+              "cpu_layers": 2,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "CPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "CPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 22.2090482711792,
+            "median_ms": 0.04100799560546875,
+            "min_ms": 0.03600120544433594,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/tiny_512x512_s1.mlmodelc",
+            "p90_ms": 0.04696846008300781,
+            "s_len": 1,
+            "sample_out0": 0.0062408447265625,
+            "units": "ane",
+            "effective_tflops": 0.013,
+            "effective_weight_gb_s": 12.79
+          },
+          "cpu": {
+            "c_in": 512,
+            "compute_plan": {
+              "ane_layers": 0,
+              "cpu_layers": 2,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "CPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "CPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 4.192948341369629,
+            "median_ms": 0.03802776336669922,
+            "min_ms": 0.03600120544433594,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/tiny_512x512_s1.mlmodelc",
+            "p90_ms": 0.04208087921142578,
+            "s_len": 1,
+            "sample_out0": 0.0062408447265625,
+            "units": "cpu",
+            "effective_tflops": 0.014,
+            "effective_weight_gb_s": 13.79
+          }
+        }
+      },
+      "draft_mlp_s1": {
+        "name": "draft_mlp_4096_1024_4096_s1",
+        "dims": [
+          [
+            4096,
+            1024
+          ],
+          [
+            1024,
+            4096
+          ]
+        ],
+        "seq_len": 1,
+        "fp16_io": true,
+        "total_params": 8388608,
+        "weight_fp16_mb": 16.78,
+        "flops_per_call": 16777216,
+        "runs": {
+          "ane": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 3,
+              "cpu_layers": 0,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv1",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 60.963988304138184,
+            "median_ms": 0.20694732666015625,
+            "min_ms": 0.19502639770507812,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/draft_mlp_4096_1024_4096_s1.mlmodelc",
+            "p90_ms": 0.22602081298828125,
+            "s_len": 1,
+            "sample_out0": 0.005859375,
+            "units": "ane",
+            "effective_tflops": 0.081,
+            "effective_weight_gb_s": 81.07
+          },
+          "gpu": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 0,
+              "cpu_layers": 0,
+              "gpu_layers": 3,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv1",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 26.078104972839355,
+            "median_ms": 0.40400028228759766,
+            "min_ms": 0.36203861236572266,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/draft_mlp_4096_1024_4096_s1.mlmodelc",
+            "p90_ms": 1.0950565338134766,
+            "s_len": 1,
+            "sample_out0": 0.006237030029296875,
+            "units": "gpu",
+            "effective_tflops": 0.042,
+            "effective_weight_gb_s": 41.53
+          },
+          "cpu": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 0,
+              "cpu_layers": 3,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "CPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "CPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv1",
+                  "preferred": "CPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 4.3239593505859375,
+            "median_ms": 0.6879568099975586,
+            "min_ms": 0.6469488143920898,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/draft_mlp_4096_1024_4096_s1.mlmodelc",
+            "p90_ms": 0.7150173187255859,
+            "s_len": 1,
+            "sample_out0": 0.0062408447265625,
+            "units": "cpu",
+            "effective_tflops": 0.024,
+            "effective_weight_gb_s": 24.39
+          }
+        }
+      },
+      "draft_mlp_s16": {
+        "name": "draft_mlp_4096_1024_4096_s16",
+        "dims": [
+          [
+            4096,
+            1024
+          ],
+          [
+            1024,
+            4096
+          ]
+        ],
+        "seq_len": 16,
+        "fp16_io": true,
+        "total_params": 8388608,
+        "weight_fp16_mb": 16.78,
+        "flops_per_call": 268435456,
+        "runs": {
+          "ane": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 3,
+              "cpu_layers": 0,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv1",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 44.31807994842529,
+            "median_ms": 0.23996829986572266,
+            "min_ms": 0.2319812774658203,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/draft_mlp_4096_1024_4096_s16.mlmodelc",
+            "p90_ms": 0.26297569274902344,
+            "s_len": 16,
+            "sample_out0": 0.005859375,
+            "units": "ane",
+            "effective_tflops": 1.119,
+            "effective_weight_gb_s": 69.91
+          },
+          "gpu": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 0,
+              "cpu_layers": 0,
+              "gpu_layers": 3,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv1",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 24.81997013092041,
+            "median_ms": 1.2019872665405273,
+            "min_ms": 1.0880231857299805,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/draft_mlp_4096_1024_4096_s16.mlmodelc",
+            "p90_ms": 1.5480518341064453,
+            "s_len": 16,
+            "sample_out0": 0.006237030029296875,
+            "units": "gpu",
+            "effective_tflops": 0.223,
+            "effective_weight_gb_s": 13.96
+          }
+        }
+      },
+      "gemm_4096_s1": {
+        "name": "gemm_4096x4096_s1",
+        "dims": [
+          [
+            4096,
+            4096
+          ]
+        ],
+        "seq_len": 1,
+        "fp16_io": true,
+        "total_params": 16777216,
+        "weight_fp16_mb": 33.55,
+        "flops_per_call": 33554432,
+        "runs": {
+          "ane": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 2,
+              "cpu_layers": 0,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 52.69598960876465,
+            "median_ms": 0.3190040588378906,
+            "min_ms": 0.2989768981933594,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/gemm_4096x4096_s1.mlmodelc",
+            "p90_ms": 0.3459453582763672,
+            "s_len": 1,
+            "sample_out0": 0.046875,
+            "units": "ane",
+            "effective_tflops": 0.105,
+            "effective_weight_gb_s": 105.18
+          },
+          "gpu": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 0,
+              "cpu_layers": 0,
+              "gpu_layers": 2,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 40.10796546936035,
+            "median_ms": 0.722050666809082,
+            "min_ms": 0.3260374069213867,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/gemm_4096x4096_s1.mlmodelc",
+            "p90_ms": 1.046895980834961,
+            "s_len": 1,
+            "sample_out0": 0.049896240234375,
+            "units": "gpu",
+            "effective_tflops": 0.046,
+            "effective_weight_gb_s": 46.47
+          }
+        }
+      },
+      "gemm_4096_s64": {
+        "name": "gemm_4096x4096_s64",
+        "dims": [
+          [
+            4096,
+            4096
+          ]
+        ],
+        "seq_len": 64,
+        "fp16_io": true,
+        "total_params": 16777216,
+        "weight_fp16_mb": 33.55,
+        "flops_per_call": 2147483648,
+        "runs": {
+          "ane": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 2,
+              "cpu_layers": 0,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 54.35502529144287,
+            "median_ms": 0.45502185821533203,
+            "min_ms": 0.4360675811767578,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/gemm_4096x4096_s64.mlmodelc",
+            "p90_ms": 0.47004222869873047,
+            "s_len": 64,
+            "sample_out0": 0.046875,
+            "units": "ane",
+            "effective_tflops": 4.72,
+            "effective_weight_gb_s": 73.74
+          },
+          "gpu": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 0,
+              "cpu_layers": 0,
+              "gpu_layers": 2,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "GPU",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 41.83602333068848,
+            "median_ms": 0.5589723587036133,
+            "min_ms": 0.4749298095703125,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/gemm_4096x4096_s64.mlmodelc",
+            "p90_ms": 1.4820098876953125,
+            "s_len": 64,
+            "sample_out0": 0.049896240234375,
+            "units": "gpu",
+            "effective_tflops": 3.842,
+            "effective_weight_gb_s": 60.03
+          }
+        }
+      },
+      "peak_4x2048_s256": {
+        "name": "peak_4x2048x2048_s256",
+        "dims": [
+          [
+            2048,
+            2048
+          ],
+          [
+            2048,
+            2048
+          ],
+          [
+            2048,
+            2048
+          ],
+          [
+            2048,
+            2048
+          ]
+        ],
+        "seq_len": 256,
+        "fp16_io": true,
+        "total_params": 16777216,
+        "weight_fp16_mb": 33.55,
+        "flops_per_call": 8589934592,
+        "runs": {
+          "ane": {
+            "c_in": 2048,
+            "compute_plan": {
+              "ane_layers": 5,
+              "cpu_layers": 0,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv1",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv2",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv3",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 50,
+            "load_ms": 70.91200351715088,
+            "median_ms": 0.8130073547363281,
+            "min_ms": 0.7939338684082031,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/peak_4x2048x2048_s256.mlmodelc",
+            "p90_ms": 0.8450746536254883,
+            "s_len": 256,
+            "sample_out0": 0,
+            "units": "ane",
+            "effective_tflops": 10.566,
+            "effective_weight_gb_s": 41.27
+          }
+        }
+      },
+      "dram_4x4096_s1": {
+        "name": "dram_4x4096x4096_s1",
+        "dims": [
+          [
+            4096,
+            4096
+          ],
+          [
+            4096,
+            4096
+          ],
+          [
+            4096,
+            4096
+          ],
+          [
+            4096,
+            4096
+          ]
+        ],
+        "seq_len": 1,
+        "fp16_io": true,
+        "total_params": 67108864,
+        "weight_fp16_mb": 134.22,
+        "flops_per_call": 134217728,
+        "runs": {
+          "ane": {
+            "c_in": 4096,
+            "compute_plan": {
+              "ane_layers": 5,
+              "cpu_layers": 0,
+              "gpu_layers": 0,
+              "layers": [
+                {
+                  "name": "conv0__fix__underflow___",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "elementwise"
+                },
+                {
+                  "name": "conv0",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv1",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv2",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                },
+                {
+                  "name": "conv3",
+                  "preferred": "NeuralEngine(2cores)",
+                  "supported": [
+                    "CPU",
+                    "GPU",
+                    "NeuralEngine(2cores)"
+                  ],
+                  "type": "convolution"
+                }
+              ],
+              "status": "ok"
+            },
+            "iters": 25,
+            "load_ms": 90.0799036026001,
+            "median_ms": 0.9579658508300781,
+            "min_ms": 0.9369850158691406,
+            "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/dram_4x4096x4096_s1.mlmodelc",
+            "p90_ms": 0.9820461273193359,
+            "s_len": 1,
+            "sample_out0": 0.0078125,
+            "units": "ane",
+            "effective_tflops": 0.14,
+            "effective_weight_gb_s": 140.11
+          }
+        }
+      }
+    },
+    "concurrent_gpu_contention": {
+      "draft_mlp_16p8MB_vs_gpu_2GB_read": {
+        "ane_solo": {
+          "elapsed_s": 4.000024080276489,
+          "iters": 19489,
+          "mean_ms": 0.2052452193686946,
+          "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/draft_mlp_4096_1024_4096_s1.mlmodelc",
+          "sample_out0": 0.005859375,
+          "units": "ane"
+        },
+        "gpu_solo": {
+          "iters": 889,
+          "elapsed_s": 4.0015,
+          "gpu_pure_read_gb_s": 477.1
+        },
+        "ane_concurrent": {
+          "elapsed_s": 4.000079989433289,
+          "iters": 18829,
+          "mean_ms": 0.2124425083346587,
+          "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/draft_mlp_4096_1024_4096_s1.mlmodelc",
+          "sample_out0": 0.005859375,
+          "units": "ane"
+        },
+        "gpu_concurrent": {
+          "iters": 809,
+          "elapsed_s": 4.0023,
+          "gpu_pure_read_gb_s": 434.08
+        },
+        "gpu_bw_retention_pct": 90.98,
+        "ane_latency_ratio_concurrent_vs_solo": 1.035
+      },
+      "dram_4x4096_134MB_vs_gpu_2GB_read": {
+        "ane_solo": {
+          "elapsed_s": 4.00052797794342,
+          "iters": 4120,
+          "mean_ms": 0.9710019363940341,
+          "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/dram_4x4096x4096_s1.mlmodelc",
+          "sample_out0": 0.0078125,
+          "units": "ane"
+        },
+        "gpu_solo": {
+          "iters": 884,
+          "elapsed_s": 4.0018,
+          "gpu_pure_read_gb_s": 474.38
+        },
+        "ane_concurrent": {
+          "elapsed_s": 4.000010013580322,
+          "iters": 4106,
+          "mean_ms": 0.9741865595665665,
+          "model": "/var/folders/fl/r1y2z4690vscrph3sbly6cqc0000gn/T/track_e_ane_xq8nd7qo/dram_4x4096x4096_s1.mlmodelc",
+          "sample_out0": 0.0078125,
+          "units": "ane"
+        },
+        "gpu_concurrent": {
+          "iters": 686,
+          "elapsed_s": 4.0016,
+          "gpu_pure_read_gb_s": 368.15
+        },
+        "gpu_bw_retention_pct": 77.61,
+        "ane_latency_ratio_concurrent_vs_solo": 1.003
+      }
+    }
+  },
+  "executive_verdicts": {
+    "pure_read_dram_best_gb_s": 507.83,
+    "copy_rw_custom_gb_s": 500.01,
+    "pure_read_vs_copy_ratio": 1.016,
+    "pure_read_pct_of_614p4_spec": 82.65,
+    "empirical_slc_peak_gb_s": 884.1,
+    "empirical_slc_knee_mb": 48,
+    "sme2_1t_fp32_fp16_bf16_int8": {
+      "fp32_tflops": 2.162,
+      "fp16_za32_tflops": 2.172,
+      "fp16_za16_tflops": 4.338,
+      "bf16_za32_tflops": 2.171,
+      "int8_tops": 4.311
+    },
+    "sme2_18t_fp32_fp16_bf16_int8": {
+      "fp32_tflops": 3.197,
+      "fp16_za32_tflops": 3.178,
+      "fp16_za16_tflops": 6.39,
+      "bf16_za32_tflops": 3.212,
+      "int8_tops": 6.408
+    },
+    "sme2_18t_over_1t_scaling_ratio": {
+      "fp32": 1.48,
+      "fp16_za32": 1.46,
+      "fp16_za16": 1.47,
+      "bf16_za32": 1.48,
+      "int8": 1.49
+    },
+    "cpu_dram_read_peak_gb_s": 275.22,
+    "metal_dispatch_serial_us": 1.519,
+    "metal_dispatch_indep_us": 0.969,
+    "fable_m64_4x16_ms_vs_flat": [
+      5.4763,
+      5.5141
+    ],
+    "dense_fp16_has_m64_valley": false,
+    "ane_draft_mlp_s1_median_ms": 0.20694732666015625,
+    "ane_peak_measured_fp16_tflops": 10.566,
+    "ane_dram_134MB_gpu_bw_retention_pct": 77.61,
+    "cpu_draft_4p2MB_gpu_bw_retention_pct": 106.43,
+    "qwen36_35b_a3b_gpu_kernels": 1757,
+    "qwen36_35b_a3b_implied_serial_dispatch_ms": 2.669,
+    "opus_35b_dispatch_gt_3ms_passed": false,
+    "qwen35_9b_gpu_kernels": 799,
+    "qwen35_9b_implied_serial_dispatch_ms": 1.214
+  }
+}

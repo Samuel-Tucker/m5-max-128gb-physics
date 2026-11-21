@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.o
+*.so
+*.dylib
+*.mlmodelc/
+*.mlpackage/
+sme2_probe
+ane_runner
+.venv/
+*.log

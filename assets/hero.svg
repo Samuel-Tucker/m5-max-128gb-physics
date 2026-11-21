@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .card { fill: #161b22; stroke: #30363d; stroke-width: 1.5; rx: 10; }
+      .accent { fill: #1f2937; stroke: #f97316; stroke-width: 1.8; rx: 10; }
+      .title { font: 700 28px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #f0f6fc; }
+      .sub { font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #8b949e; }
+      .eyebrow { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #f97316; letter-spacing: 1px; }
+      .eyebrow-b { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #58a6ff; letter-spacing: 1px; }
+      .eyebrow-g { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #3fb950; letter-spacing: 1px; }
+      .eyebrow-r { font: 600 11px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #f85149; letter-spacing: 1px; }
+      .big { font: 700 38px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #f0f6fc; }
+      .big-o { font: 700 38px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #fb923c; }
+      .big-g { font: 700 38px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #3fb950; }
+      .big-b { font: 700 38px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #58a6ff; }
+      .label { font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #e6edf3; }
+      .detail { font: 400 12.5px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #8b949e; }
+      .bar-bg { fill: #21262d; rx: 4; }
+      .bar-o { fill: #f97316; rx: 4; }
+      .bar-b { fill: #388bfd; rx: 4; }
+      .bar-g { fill: #3fb950; rx: 4; }
+      .bar-m { fill: #6e7681; rx: 4; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="540"/>
+  <text x="40" y="50" class="title">Apple M5 Max (128 GB) — First-Principles Inference Physics</text>
+  <text x="40" y="76" class="sub">Idle-GPU measured Metal 4 NAX kernels · Lean-style verified synthesis · Exact Gated DeltaNet rollback · Honest kills</text>
+
+  <!-- 4 Top Stat Cards -->
+  <rect class="accent" x="40" y="102" width="265" height="145"/>
+  <text x="58" y="128" class="eyebrow">METAL 4 HARDWARE NAX</text>
+  <text x="58" y="176" class="big-o">89.86 TOPS</text>
+  <text x="58" y="203" class="label">INT8 × INT4 direct 4-bit silicon</text>
+  <text x="58" y="226" class="detail">err = 0 · 1.55× FP16 (58.5 TF)</text>
+
+  <rect class="card" x="325" y="102" width="265" height="145"/>
+  <text x="343" y="128" class="eyebrow-b">LEAN-STYLE SYNTHESIS</text>
+  <text x="343" y="176" class="big-b">2.85×</text>
+  <text x="343" y="203" class="label">down_proj M=64 (276/276 verified)</text>
+  <text x="343" y="226" class="detail">9B K=16 verify: 38.7 → 20.2 ms</text>
+
+  <rect class="card" x="610" y="102" width="265" height="145"/>
+  <text x="628" y="128" class="eyebrow-g">REAL MODEL DECODE (12 PROMPTS)</text>
+  <text x="628" y="176" class="big-g">242.5 tok/s</text>
+  <text x="628" y="203" class="label">Qwen3.5-9B code (2.90×) · 35B 2.06×</text>
+  <text x="628" y="226" class="detail">DeltaNet rollback 0.00e+00 (0.3ms)</text>
+
+  <rect class="card" x="895" y="102" width="265" height="145"/>
+  <text x="913" y="128" class="eyebrow-r">HONEST MATH KILLS (3/3)</text>
+  <text x="913" y="176" class="big">0.24%</text>
+  <text x="913" y="203" class="label">max lossless lm_head CS skip</text>
+  <text x="913" y="226" class="detail">94× CS looseness · zero theatre</text>
+
+  <!-- Bottom Left: MLX M=8..64 Cliff vs Track A/B -->
+  <rect class="card" x="40" y="268" width="550" height="240"/>
+  <text x="60" y="296" class="label">Qwen3.5-9B-4bit Verify Latency (ms · lower is better)</text>
+  <text x="60" y="316" class="detail">Stock MLX 0.31.2 hits legacy non-NAX split-K cliff at K=8..64; Track A Metal 4 NAX erases it</text>
+
+  <text x="60" y="352" class="detail">K= 8  Stock 27.9ms</text>
+  <rect class="bar-bg" x="210" y="339" width="350" height="16"/><rect class="bar-m" x="210" y="339" width="188" height="16"/>
+  <text x="60" y="372" class="detail">      NAX   18.9ms</text>
+  <rect class="bar-bg" x="210" y="359" width="350" height="16"/><rect class="bar-o" x="210" y="359" width="128" height="16"/>
+  <text x="346" y="372" class="eyebrow">1.47×</text>
+
+  <text x="60" y="406" class="detail">K=16  Stock 38.7ms</text>
+  <rect class="bar-bg" x="210" y="393" width="350" height="16"/><rect class="bar-m" x="210" y="393" width="261" height="16"/>
+  <text x="60" y="426" class="detail">      u4NAX 20.2ms</text>
+  <rect class="bar-bg" x="210" y="413" width="350" height="16"/><rect class="bar-o" x="210" y="413" width="136" height="16"/>
+  <text x="354" y="426" class="eyebrow">1.92×</text>
+
+  <text x="60" y="460" class="detail">K=32  Stock 37.8ms</text>
+  <rect class="bar-bg" x="210" y="447" width="350" height="16"/><rect class="bar-m" x="210" y="447" width="255" height="16"/>
+  <text x="60" y="480" class="detail">      NAX   24.7ms</text>
+  <rect class="bar-bg" x="210" y="467" width="350" height="16"/><rect class="bar-o" x="210" y="467" width="167" height="16"/>
+  <text x="385" y="480" class="eyebrow">1.53×</text>
+
+  <!-- Bottom Right: Real End-to-End Sealed Decode -->
+  <rect class="card" x="610" y="268" width="550" height="240"/>
+  <text x="630" y="296" class="label">End-to-End Decode Speed (tok/s · 12 sealed prompts · higher is better)</text>
+  <text x="630" y="316" class="detail">Exact Gated DeltaNet replay (0.3ms) + CPU suffix + conf-gated 0.8B + Metal 4 NAX</text>
+
+  <text x="630" y="352" class="detail">9B Code   Stock  83.5</text>
+  <rect class="bar-bg" x="795" y="339" width="340" height="14"/><rect class="bar-m" x="795" y="339" width="110" height="14"/>
+  <text x="630" y="370" class="detail">          Flag. 242.5</text>
+  <rect class="bar-bg" x="795" y="357" width="340" height="14"/><rect class="bar-o" x="795" y="357" width="320" height="14"/>
+
+  <text x="630" y="398" class="detail">9B Extr.  Stock  89.6</text>
+  <rect class="bar-bg" x="795" y="385" width="340" height="14"/><rect class="bar-m" x="795" y="385" width="118" height="14"/>
+  <text x="630" y="416" class="detail">          Flag. 176.6</text>
+  <rect class="bar-bg" x="795" y="403" width="340" height="14"/><rect class="bar-o" x="795" y="403" width="233" height="14"/>
+
+  <text x="630" y="444" class="detail">35B Code  Stock 111.2</text>
+  <rect class="bar-bg" x="795" y="431" width="340" height="14"/><rect class="bar-m" x="795" y="431" width="147" height="14"/>
+  <text x="630" y="462" class="detail">          Hybr. 228.7</text>
+  <rect class="bar-bg" x="795" y="449" width="340" height="14"/><rect class="bar-g" x="795" y="449" width="302" height="14"/>
+
+  <text x="630" y="490" class="detail">35B Prose Stock 113.9 → Conf 123.8 (1.09×, 100% bit-exact) · 9B Prose: 90.7 → 91.6 (1.01×)</text>
+</svg>

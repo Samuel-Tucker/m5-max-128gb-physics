@@ -1,0 +1,2296 @@
+{
+  "track": "Track A \u2014 Silicon Physics & Metal 4 Hardware NAX",
+  "device": {
+    "device_name": "Apple M5 Max",
+    "max_recommended_working_set_size": 115448725504,
+    "memory_size": 137438953472,
+    "architecture": "applegpu_g17s",
+    "max_buffer_length": 86586540032,
+    "resource_limit": 499000
+  },
+  "mlx_version": "0.31.2",
+  "quick_mode": false,
+  "elapsed_sec": 31.83,
+  "hardware_integer_nax": {
+    "shape": [
+      4096,
+      4096,
+      4096
+    ],
+    "exact_int8_int8_max_err": 0,
+    "exact_int8_int4_max_err": 0,
+    "int8_x_int8_bk64": {
+      "ms_median": 1.645,
+      "ms_min": 1.569,
+      "tops_median": 83.56,
+      "tops_peak": 87.58
+    },
+    "int8_x_int4_bk64": {
+      "ms_median": 1.713,
+      "ms_min": 1.653,
+      "tops_median": 80.21,
+      "tops_peak": 83.13
+    },
+    "int8_x_int4_bk128": {
+      "ms_median": 1.582,
+      "ms_min": 1.529,
+      "tops_median": 86.86,
+      "tops_peak": 89.86
+    },
+    "fp16_mlx_matmul_ref": {
+      "ms_median": 2.456,
+      "ms_min": 2.348,
+      "tops_median": 55.96,
+      "tops_peak": 58.53
+    }
+  },
+  "cold_32layer_micro": {
+    "n_layers": 32,
+    "dtype": "mlx.core.float16",
+    "iters": 5,
+    "shapes": {
+      "4096x4096": {
+        "N": 4096,
+        "K": 4096,
+        "weight_bytes_32L_MB": 288.0,
+        "by_M": {
+          "1": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.000836,
+                "stock_ms_median": 0.822,
+                "stock_ms_min": 0.767,
+                "cand_ms_median": 1.507,
+                "cand_ms_min": 1.461,
+                "speedup_median": 0.545,
+                "speedup_min": 0.525,
+                "effective_gbps_median": 200.4,
+                "status": "PASS"
+              },
+              "tg_deq_bn16_bk64_sk2": {
+                "max_abs_err_fp32": 0.000909,
+                "stock_ms_median": 0.843,
+                "stock_ms_min": 0.795,
+                "cand_ms_median": 1.257,
+                "cand_ms_min": 1.199,
+                "speedup_median": 0.671,
+                "speedup_min": 0.663,
+                "effective_gbps_median": 240.3,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.000752,
+                "stock_ms_median": 0.858,
+                "stock_ms_min": 0.771,
+                "cand_ms_median": 1.193,
+                "cand_ms_min": 1.179,
+                "speedup_median": 0.719,
+                "speedup_min": 0.654,
+                "effective_gbps_median": 253.2,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001662,
+                "stock_ms_median": 0.797,
+                "stock_ms_min": 0.764,
+                "cand_ms_median": 0.827,
+                "cand_ms_min": 0.779,
+                "speedup_median": 0.964,
+                "speedup_min": 0.981,
+                "effective_gbps_median": 365.3,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000486,
+                "stock_ms_median": 0.802,
+                "stock_ms_min": 0.766,
+                "cand_ms_median": 3.141,
+                "cand_ms_min": 3.079,
+                "speedup_median": 0.255,
+                "speedup_min": 0.249,
+                "effective_gbps_median": 96.1,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 0.827,
+            "best_speedup_median": 0.964
+          },
+          "4": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.000859,
+                "stock_ms_median": 1.193,
+                "stock_ms_min": 1.161,
+                "cand_ms_median": 1.48,
+                "cand_ms_min": 1.419,
+                "speedup_median": 0.806,
+                "speedup_min": 0.818,
+                "effective_gbps_median": 204.0,
+                "status": "PASS"
+              },
+              "tg_deq_bn16_bk64_sk2": {
+                "max_abs_err_fp32": 0.001107,
+                "stock_ms_median": 1.169,
+                "stock_ms_min": 1.137,
+                "cand_ms_median": 1.236,
+                "cand_ms_min": 1.221,
+                "speedup_median": 0.946,
+                "speedup_min": 0.931,
+                "effective_gbps_median": 244.4,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.000959,
+                "stock_ms_median": 1.249,
+                "stock_ms_min": 1.16,
+                "cand_ms_median": 1.237,
+                "cand_ms_min": 1.188,
+                "speedup_median": 1.01,
+                "speedup_min": 0.977,
+                "effective_gbps_median": 244.1,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001791,
+                "stock_ms_median": 1.212,
+                "stock_ms_min": 1.155,
+                "cand_ms_median": 1.212,
+                "cand_ms_min": 1.165,
+                "speedup_median": 1.0,
+                "speedup_min": 0.991,
+                "effective_gbps_median": 249.2,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000488,
+                "stock_ms_median": 1.158,
+                "stock_ms_min": 1.127,
+                "cand_ms_median": 3.2,
+                "cand_ms_min": 3.156,
+                "speedup_median": 0.362,
+                "speedup_min": 0.357,
+                "effective_gbps_median": 94.4,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 1.212,
+            "best_speedup_median": 1.0
+          },
+          "8": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.001007,
+                "stock_ms_median": 2.171,
+                "stock_ms_min": 2.156,
+                "cand_ms_median": 1.578,
+                "cand_ms_min": 1.5,
+                "speedup_median": 1.375,
+                "speedup_min": 1.437,
+                "effective_gbps_median": 191.3,
+                "status": "PASS"
+              },
+              "tg_deq_bn16_bk64_sk2": {
+                "max_abs_err_fp32": 0.001499,
+                "stock_ms_median": 2.106,
+                "stock_ms_min": 2.039,
+                "cand_ms_median": 1.263,
+                "cand_ms_min": 1.225,
+                "speedup_median": 1.667,
+                "speedup_min": 1.664,
+                "effective_gbps_median": 239.0,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.000924,
+                "stock_ms_median": 2.145,
+                "stock_ms_min": 2.054,
+                "cand_ms_median": 1.285,
+                "cand_ms_min": 1.258,
+                "speedup_median": 1.669,
+                "speedup_min": 1.632,
+                "effective_gbps_median": 235.0,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.000924,
+                "stock_ms_median": 2.174,
+                "stock_ms_min": 2.057,
+                "cand_ms_median": 1.329,
+                "cand_ms_min": 1.247,
+                "speedup_median": 1.636,
+                "speedup_min": 1.649,
+                "effective_gbps_median": 227.3,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000762,
+                "stock_ms_median": 2.199,
+                "stock_ms_min": 2.084,
+                "cand_ms_median": 3.196,
+                "cand_ms_min": 3.187,
+                "speedup_median": 0.688,
+                "speedup_min": 0.654,
+                "effective_gbps_median": 94.5,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "tg_deq_bn16_bk64_sk2",
+            "best_ms_median": 1.263,
+            "best_speedup_median": 1.667
+          },
+          "16": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.000944,
+                "stock_ms_median": 2.652,
+                "stock_ms_min": 2.614,
+                "cand_ms_median": 1.347,
+                "cand_ms_min": 1.294,
+                "speedup_median": 1.968,
+                "speedup_min": 2.02,
+                "effective_gbps_median": 224.1,
+                "status": "PASS"
+              },
+              "u4_direct_atomic_bn32_sk4": {
+                "max_abs_err_fp32": 0.000827,
+                "stock_ms_median": 2.684,
+                "stock_ms_min": 2.638,
+                "cand_ms_median": 1.406,
+                "cand_ms_min": 1.369,
+                "speedup_median": 1.908,
+                "speedup_min": 1.928,
+                "effective_gbps_median": 214.7,
+                "status": "PASS"
+              },
+              "tg_deq_bn16_bk64_sk2": {
+                "max_abs_err_fp32": 0.000959,
+                "stock_ms_median": 2.706,
+                "stock_ms_min": 2.672,
+                "cand_ms_median": 1.327,
+                "cand_ms_min": 1.273,
+                "speedup_median": 2.04,
+                "speedup_min": 2.1,
+                "effective_gbps_median": 227.6,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.000939,
+                "stock_ms_median": 2.701,
+                "stock_ms_min": 2.693,
+                "cand_ms_median": 1.315,
+                "cand_ms_min": 1.291,
+                "speedup_median": 2.054,
+                "speedup_min": 2.086,
+                "effective_gbps_median": 229.7,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.000939,
+                "stock_ms_median": 2.717,
+                "stock_ms_min": 2.672,
+                "cand_ms_median": 1.315,
+                "cand_ms_min": 1.278,
+                "speedup_median": 2.066,
+                "speedup_min": 2.09,
+                "effective_gbps_median": 229.6,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000488,
+                "stock_ms_median": 2.678,
+                "stock_ms_min": 2.641,
+                "cand_ms_median": 3.186,
+                "cand_ms_min": 3.14,
+                "speedup_median": 0.84,
+                "speedup_min": 0.841,
+                "effective_gbps_median": 94.8,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk4": {
+                "max_abs_err_fp32": 0.013125,
+                "stock_ms_median": 2.793,
+                "cand_ms_median": 1.322,
+                "cand_ms_min": 1.298,
+                "speedup_median": 2.113,
+                "effective_gbps_median": 228.4,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "tg_deq_bn32_bk64_sk4",
+            "best_ms_median": 1.315,
+            "best_speedup_median": 2.054
+          },
+          "32": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.001413,
+                "stock_ms_median": 2.642,
+                "stock_ms_min": 2.603,
+                "cand_ms_median": 1.723,
+                "cand_ms_min": 1.663,
+                "speedup_median": 1.533,
+                "speedup_min": 1.565,
+                "effective_gbps_median": 175.3,
+                "status": "PASS"
+              },
+              "u4_direct_atomic_bn32_sk4": {
+                "max_abs_err_fp32": 0.0008,
+                "stock_ms_median": 2.645,
+                "stock_ms_min": 2.594,
+                "cand_ms_median": 1.897,
+                "cand_ms_min": 1.871,
+                "speedup_median": 1.395,
+                "speedup_min": 1.387,
+                "effective_gbps_median": 159.2,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk2_db": {
+                "max_abs_err_fp32": 0.001207,
+                "stock_ms_median": 2.72,
+                "stock_ms_min": 2.614,
+                "cand_ms_median": 1.564,
+                "cand_ms_min": 1.493,
+                "speedup_median": 1.739,
+                "speedup_min": 1.751,
+                "effective_gbps_median": 193.1,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.001207,
+                "stock_ms_median": 2.656,
+                "stock_ms_min": 2.605,
+                "cand_ms_median": 1.562,
+                "cand_ms_min": 1.466,
+                "speedup_median": 1.701,
+                "speedup_min": 1.777,
+                "effective_gbps_median": 193.4,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001207,
+                "stock_ms_median": 2.635,
+                "stock_ms_min": 2.63,
+                "cand_ms_median": 1.586,
+                "cand_ms_min": 1.555,
+                "speedup_median": 1.661,
+                "speedup_min": 1.692,
+                "effective_gbps_median": 190.4,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.00077,
+                "stock_ms_median": 2.7,
+                "stock_ms_min": 2.621,
+                "cand_ms_median": 3.296,
+                "cand_ms_min": 3.232,
+                "speedup_median": 0.819,
+                "speedup_min": 0.811,
+                "effective_gbps_median": 91.6,
+                "status": "PASS"
+              },
+              "ablation_reg_ctb_bn32_sk2": {
+                "max_abs_err_fp32": 0.001207,
+                "stock_ms_median": 2.649,
+                "stock_ms_min": 2.635,
+                "cand_ms_median": 2.947,
+                "cand_ms_min": 2.897,
+                "speedup_median": 0.899,
+                "speedup_min": 0.909,
+                "effective_gbps_median": 102.5,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk4": {
+                "max_abs_err_fp32": 0.013882,
+                "stock_ms_median": 2.655,
+                "cand_ms_median": 1.743,
+                "cand_ms_min": 1.714,
+                "speedup_median": 1.523,
+                "effective_gbps_median": 173.3,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "tg_deq_bn32_bk64_sk4",
+            "best_ms_median": 1.562,
+            "best_speedup_median": 1.701
+          },
+          "64": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.001559,
+                "stock_ms_median": 4.84,
+                "stock_ms_min": 4.77,
+                "cand_ms_median": 2.671,
+                "cand_ms_min": 2.614,
+                "speedup_median": 1.812,
+                "speedup_min": 1.825,
+                "effective_gbps_median": 113.1,
+                "status": "PASS"
+              },
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.001353,
+                "stock_ms_median": 4.851,
+                "stock_ms_min": 4.808,
+                "cand_ms_median": 2.729,
+                "cand_ms_min": 2.688,
+                "speedup_median": 1.778,
+                "speedup_min": 1.789,
+                "effective_gbps_median": 110.7,
+                "status": "PASS"
+              },
+              "u4_direct_atomic_bn32_sk4": {
+                "max_abs_err_fp32": 0.000948,
+                "stock_ms_median": 4.87,
+                "stock_ms_min": 4.837,
+                "cand_ms_median": 3.065,
+                "cand_ms_min": 3.031,
+                "speedup_median": 1.589,
+                "speedup_min": 1.596,
+                "effective_gbps_median": 98.5,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk2": {
+                "max_abs_err_fp32": 0.001559,
+                "stock_ms_median": 4.893,
+                "stock_ms_min": 4.818,
+                "cand_ms_median": 2.094,
+                "cand_ms_min": 2.024,
+                "speedup_median": 2.337,
+                "speedup_min": 2.381,
+                "effective_gbps_median": 144.2,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk64_sk2": {
+                "max_abs_err_fp32": 0.001559,
+                "stock_ms_median": 4.9,
+                "stock_ms_min": 4.849,
+                "cand_ms_median": 2.197,
+                "cand_ms_min": 2.135,
+                "speedup_median": 2.23,
+                "speedup_min": 2.271,
+                "effective_gbps_median": 137.4,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001559,
+                "stock_ms_median": 4.868,
+                "stock_ms_min": 4.804,
+                "cand_ms_median": 2.169,
+                "cand_ms_min": 2.054,
+                "speedup_median": 2.245,
+                "speedup_min": 2.339,
+                "effective_gbps_median": 139.3,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000948,
+                "stock_ms_median": 4.904,
+                "stock_ms_min": 4.867,
+                "cand_ms_median": 3.274,
+                "cand_ms_min": 3.158,
+                "speedup_median": 1.498,
+                "speedup_min": 1.541,
+                "effective_gbps_median": 92.2,
+                "status": "PASS"
+              },
+              "workaround_reshape_4x16": {
+                "max_abs_err_fp32": 0.001559,
+                "stock_ms_median": 4.859,
+                "stock_ms_min": 4.795,
+                "cand_ms_median": 4.897,
+                "cand_ms_min": 4.857,
+                "speedup_median": 0.992,
+                "speedup_min": 0.987,
+                "effective_gbps_median": 61.7,
+                "status": "PASS"
+              },
+              "ablation_reg_ctb_bn32_sk2": {
+                "max_abs_err_fp32": 0.001559,
+                "stock_ms_median": 4.822,
+                "stock_ms_min": 4.81,
+                "cand_ms_median": 4.749,
+                "cand_ms_min": 4.721,
+                "speedup_median": 1.015,
+                "speedup_min": 1.019,
+                "effective_gbps_median": 63.6,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk4": {
+                "max_abs_err_fp32": 0.013712,
+                "stock_ms_median": 4.897,
+                "cand_ms_median": 2.797,
+                "cand_ms_min": 2.715,
+                "speedup_median": 1.751,
+                "effective_gbps_median": 108.0,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "tg_deq_bn32_bk64_sk2",
+            "best_ms_median": 2.094,
+            "best_speedup_median": 2.337
+          },
+          "128": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.001293,
+                "stock_ms_median": 2.911,
+                "stock_ms_min": 2.875,
+                "cand_ms_median": 4.987,
+                "cand_ms_min": 4.928,
+                "speedup_median": 0.584,
+                "speedup_min": 0.583,
+                "effective_gbps_median": 60.6,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk2": {
+                "max_abs_err_fp32": 0.001593,
+                "stock_ms_median": 2.979,
+                "stock_ms_min": 2.893,
+                "cand_ms_median": 4.18,
+                "cand_ms_min": 4.096,
+                "speedup_median": 0.713,
+                "speedup_min": 0.706,
+                "effective_gbps_median": 72.2,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.000974,
+                "stock_ms_median": 2.97,
+                "stock_ms_min": 2.915,
+                "cand_ms_median": 3.237,
+                "cand_ms_min": 3.064,
+                "speedup_median": 0.917,
+                "speedup_min": 0.952,
+                "effective_gbps_median": 93.3,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.000974,
+                "stock_ms_median": 2.996,
+                "stock_ms_min": 2.941,
+                "cand_ms_median": 2.982,
+                "cand_ms_min": 2.902,
+                "speedup_median": 1.005,
+                "speedup_min": 1.013,
+                "effective_gbps_median": 101.3,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 2.982,
+            "best_speedup_median": 1.005
+          }
+        }
+      },
+      "12288x4096": {
+        "N": 12288,
+        "K": 4096,
+        "weight_bytes_32L_MB": 864.0,
+        "by_M": {
+          "1": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.000991,
+                "stock_ms_median": 1.867,
+                "stock_ms_min": 1.766,
+                "cand_ms_median": 3.384,
+                "cand_ms_min": 3.31,
+                "speedup_median": 0.552,
+                "speedup_min": 0.534,
+                "effective_gbps_median": 267.7,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.000488,
+                "stock_ms_median": 1.819,
+                "stock_ms_min": 1.78,
+                "cand_ms_median": 3.362,
+                "cand_ms_min": 3.336,
+                "speedup_median": 0.541,
+                "speedup_min": 0.534,
+                "effective_gbps_median": 269.5,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.000981,
+                "stock_ms_median": 1.834,
+                "stock_ms_min": 1.811,
+                "cand_ms_median": 3.478,
+                "cand_ms_min": 3.437,
+                "speedup_median": 0.527,
+                "speedup_min": 0.527,
+                "effective_gbps_median": 260.5,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001902,
+                "stock_ms_median": 1.841,
+                "stock_ms_min": 1.774,
+                "cand_ms_median": 1.877,
+                "cand_ms_min": 1.808,
+                "speedup_median": 0.981,
+                "speedup_min": 0.981,
+                "effective_gbps_median": 482.8,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000488,
+                "stock_ms_median": 1.841,
+                "stock_ms_min": 1.767,
+                "cand_ms_median": 8.229,
+                "cand_ms_min": 8.194,
+                "speedup_median": 0.224,
+                "speedup_min": 0.216,
+                "effective_gbps_median": 110.1,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 1.877,
+            "best_speedup_median": 0.981
+          },
+          "4": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.001535,
+                "stock_ms_median": 3.031,
+                "stock_ms_min": 2.995,
+                "cand_ms_median": 3.467,
+                "cand_ms_min": 3.452,
+                "speedup_median": 0.874,
+                "speedup_min": 0.868,
+                "effective_gbps_median": 261.3,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.000855,
+                "stock_ms_median": 3.059,
+                "stock_ms_min": 3.019,
+                "cand_ms_median": 3.421,
+                "cand_ms_min": 3.401,
+                "speedup_median": 0.894,
+                "speedup_min": 0.888,
+                "effective_gbps_median": 264.8,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.001535,
+                "stock_ms_median": 3.035,
+                "stock_ms_min": 2.988,
+                "cand_ms_median": 3.433,
+                "cand_ms_min": 3.381,
+                "speedup_median": 0.884,
+                "speedup_min": 0.884,
+                "effective_gbps_median": 263.9,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.002141,
+                "stock_ms_median": 3.075,
+                "stock_ms_min": 2.961,
+                "cand_ms_median": 3.106,
+                "cand_ms_min": 2.997,
+                "speedup_median": 0.99,
+                "speedup_min": 0.988,
+                "effective_gbps_median": 291.7,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000855,
+                "stock_ms_median": 3.009,
+                "stock_ms_min": 2.952,
+                "cand_ms_median": 8.312,
+                "cand_ms_min": 8.176,
+                "speedup_median": 0.362,
+                "speedup_min": 0.361,
+                "effective_gbps_median": 109.0,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 3.106,
+            "best_speedup_median": 0.99
+          },
+          "8": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.001451,
+                "stock_ms_median": 6.157,
+                "stock_ms_min": 5.958,
+                "cand_ms_median": 3.544,
+                "cand_ms_min": 3.522,
+                "speedup_median": 1.737,
+                "speedup_min": 1.692,
+                "effective_gbps_median": 255.6,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.000628,
+                "stock_ms_median": 6.175,
+                "stock_ms_min": 6.143,
+                "cand_ms_median": 3.918,
+                "cand_ms_min": 3.897,
+                "speedup_median": 1.576,
+                "speedup_min": 1.576,
+                "effective_gbps_median": 231.2,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.001451,
+                "stock_ms_median": 6.246,
+                "stock_ms_min": 6.202,
+                "cand_ms_median": 3.523,
+                "cand_ms_min": 3.445,
+                "speedup_median": 1.773,
+                "speedup_min": 1.8,
+                "effective_gbps_median": 257.1,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001451,
+                "stock_ms_median": 6.197,
+                "stock_ms_min": 6.152,
+                "cand_ms_median": 2.959,
+                "cand_ms_min": 2.912,
+                "speedup_median": 2.094,
+                "speedup_min": 2.112,
+                "effective_gbps_median": 306.2,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000628,
+                "stock_ms_median": 6.139,
+                "stock_ms_min": 6.071,
+                "cand_ms_median": 8.319,
+                "cand_ms_min": 8.044,
+                "speedup_median": 0.738,
+                "speedup_min": 0.755,
+                "effective_gbps_median": 108.9,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 2.959,
+            "best_speedup_median": 2.094
+          },
+          "16": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.001574,
+                "stock_ms_median": 4.437,
+                "stock_ms_min": 4.406,
+                "cand_ms_median": 3.011,
+                "cand_ms_min": 2.944,
+                "speedup_median": 1.474,
+                "speedup_min": 1.497,
+                "effective_gbps_median": 300.9,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.00088,
+                "stock_ms_median": 4.485,
+                "stock_ms_min": 4.424,
+                "cand_ms_median": 3.913,
+                "cand_ms_min": 3.881,
+                "speedup_median": 1.146,
+                "speedup_min": 1.14,
+                "effective_gbps_median": 231.5,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.001574,
+                "stock_ms_median": 4.493,
+                "stock_ms_min": 4.413,
+                "cand_ms_median": 3.896,
+                "cand_ms_min": 3.674,
+                "speedup_median": 1.153,
+                "speedup_min": 1.201,
+                "effective_gbps_median": 232.5,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001574,
+                "stock_ms_median": 4.57,
+                "stock_ms_min": 4.446,
+                "cand_ms_median": 3.906,
+                "cand_ms_min": 3.8,
+                "speedup_median": 1.17,
+                "speedup_min": 1.17,
+                "effective_gbps_median": 231.9,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.00088,
+                "stock_ms_median": 4.499,
+                "stock_ms_min": 4.448,
+                "cand_ms_median": 8.317,
+                "cand_ms_min": 8.176,
+                "speedup_median": 0.541,
+                "speedup_min": 0.544,
+                "effective_gbps_median": 108.9,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk2": {
+                "max_abs_err_fp32": 0.014526,
+                "stock_ms_median": 4.437,
+                "cand_ms_median": 2.785,
+                "cand_ms_min": 2.733,
+                "speedup_median": 1.593,
+                "effective_gbps_median": 325.3,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "grouped_i8i4_bn32_sk2",
+            "best_ms_median": 2.785,
+            "best_speedup_median": 1.593
+          },
+          "32": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.001193,
+                "stock_ms_median": 4.282,
+                "stock_ms_min": 4.238,
+                "cand_ms_median": 5.086,
+                "cand_ms_min": 4.614,
+                "speedup_median": 0.842,
+                "speedup_min": 0.919,
+                "effective_gbps_median": 178.1,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.000965,
+                "stock_ms_median": 4.272,
+                "stock_ms_min": 4.256,
+                "cand_ms_median": 3.99,
+                "cand_ms_min": 3.911,
+                "speedup_median": 1.071,
+                "speedup_min": 1.088,
+                "effective_gbps_median": 227.0,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.001112,
+                "stock_ms_median": 4.265,
+                "stock_ms_min": 4.223,
+                "cand_ms_median": 3.773,
+                "cand_ms_min": 3.697,
+                "speedup_median": 1.13,
+                "speedup_min": 1.142,
+                "effective_gbps_median": 240.1,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001112,
+                "stock_ms_median": 4.26,
+                "stock_ms_min": 4.247,
+                "cand_ms_median": 3.958,
+                "cand_ms_min": 3.854,
+                "speedup_median": 1.076,
+                "speedup_min": 1.102,
+                "effective_gbps_median": 228.9,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000965,
+                "stock_ms_median": 4.329,
+                "stock_ms_min": 4.247,
+                "cand_ms_median": 8.242,
+                "cand_ms_min": 8.191,
+                "speedup_median": 0.525,
+                "speedup_min": 0.518,
+                "effective_gbps_median": 109.9,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk2": {
+                "max_abs_err_fp32": 0.014064,
+                "stock_ms_median": 4.302,
+                "cand_ms_median": 3.884,
+                "cand_ms_min": 3.848,
+                "speedup_median": 1.108,
+                "effective_gbps_median": 233.3,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "tg_deq_bn64_bk128_sk2",
+            "best_ms_median": 3.773,
+            "best_speedup_median": 1.13
+          },
+          "64": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.001656,
+                "stock_ms_median": 4.884,
+                "stock_ms_min": 4.584,
+                "cand_ms_median": 6.937,
+                "cand_ms_min": 6.906,
+                "speedup_median": 0.704,
+                "speedup_min": 0.664,
+                "effective_gbps_median": 130.6,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.000965,
+                "stock_ms_median": 4.72,
+                "stock_ms_min": 4.606,
+                "cand_ms_median": 4.855,
+                "cand_ms_min": 4.595,
+                "speedup_median": 0.972,
+                "speedup_min": 1.002,
+                "effective_gbps_median": 186.6,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.001283,
+                "stock_ms_median": 4.624,
+                "stock_ms_min": 4.602,
+                "cand_ms_median": 4.996,
+                "cand_ms_min": 4.978,
+                "speedup_median": 0.925,
+                "speedup_min": 0.924,
+                "effective_gbps_median": 181.3,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.000965,
+                "stock_ms_median": 4.795,
+                "stock_ms_min": 4.563,
+                "cand_ms_median": 4.84,
+                "cand_ms_min": 4.647,
+                "speedup_median": 0.991,
+                "speedup_min": 0.982,
+                "effective_gbps_median": 187.2,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000965,
+                "stock_ms_median": 4.78,
+                "stock_ms_min": 4.584,
+                "cand_ms_median": 8.313,
+                "cand_ms_min": 8.159,
+                "speedup_median": 0.575,
+                "speedup_min": 0.562,
+                "effective_gbps_median": 109.0,
+                "status": "PASS"
+              },
+              "workaround_reshape_4x16": {
+                "max_abs_err_fp32": 0.000965,
+                "stock_ms_median": 4.869,
+                "stock_ms_min": 4.619,
+                "cand_ms_median": 4.702,
+                "cand_ms_min": 4.65,
+                "speedup_median": 1.036,
+                "speedup_min": 0.993,
+                "effective_gbps_median": 192.7,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk2": {
+                "max_abs_err_fp32": 0.015375,
+                "stock_ms_median": 4.719,
+                "cand_ms_median": 6.796,
+                "cand_ms_min": 6.702,
+                "speedup_median": 0.694,
+                "effective_gbps_median": 133.3,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "workaround_reshape_4x16",
+            "best_ms_median": 4.702,
+            "best_speedup_median": 1.036
+          },
+          "128": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.001806,
+                "stock_ms_median": 8.044,
+                "stock_ms_min": 7.912,
+                "cand_ms_median": 13.467,
+                "cand_ms_min": 13.391,
+                "speedup_median": 0.597,
+                "speedup_min": 0.591,
+                "effective_gbps_median": 67.3,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.000971,
+                "stock_ms_median": 8.095,
+                "stock_ms_min": 7.988,
+                "cand_ms_median": 8.602,
+                "cand_ms_min": 8.501,
+                "speedup_median": 0.941,
+                "speedup_min": 0.94,
+                "effective_gbps_median": 105.3,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.001806,
+                "stock_ms_median": 8.067,
+                "stock_ms_min": 8.035,
+                "cand_ms_median": 9.321,
+                "cand_ms_min": 9.247,
+                "speedup_median": 0.865,
+                "speedup_min": 0.869,
+                "effective_gbps_median": 97.2,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.000971,
+                "stock_ms_median": 8.121,
+                "stock_ms_min": 8.03,
+                "cand_ms_median": 8.292,
+                "cand_ms_min": 8.089,
+                "speedup_median": 0.979,
+                "speedup_min": 0.993,
+                "effective_gbps_median": 109.3,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 8.292,
+            "best_speedup_median": 0.979
+          }
+        }
+      },
+      "4096x12288": {
+        "N": 4096,
+        "K": 12288,
+        "weight_bytes_32L_MB": 864.0,
+        "by_M": {
+          "1": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.001634,
+                "stock_ms_median": 1.835,
+                "stock_ms_min": 1.808,
+                "cand_ms_median": 3.517,
+                "cand_ms_min": 3.481,
+                "speedup_median": 0.522,
+                "speedup_min": 0.52,
+                "effective_gbps_median": 257.6,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.00152,
+                "stock_ms_median": 1.908,
+                "stock_ms_min": 1.817,
+                "cand_ms_median": 2.863,
+                "cand_ms_min": 2.775,
+                "speedup_median": 0.666,
+                "speedup_min": 0.655,
+                "effective_gbps_median": 316.5,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.003279,
+                "stock_ms_median": 1.791,
+                "stock_ms_min": 1.79,
+                "cand_ms_median": 1.84,
+                "cand_ms_min": 1.805,
+                "speedup_median": 0.973,
+                "speedup_min": 0.992,
+                "effective_gbps_median": 492.3,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000967,
+                "stock_ms_median": 1.818,
+                "stock_ms_min": 1.794,
+                "cand_ms_median": 8.805,
+                "cand_ms_min": 8.633,
+                "speedup_median": 0.206,
+                "speedup_min": 0.208,
+                "effective_gbps_median": 102.9,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 1.84,
+            "best_speedup_median": 0.973
+          },
+          "4": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.001656,
+                "stock_ms_median": 3.417,
+                "stock_ms_min": 3.368,
+                "cand_ms_median": 3.687,
+                "cand_ms_min": 3.68,
+                "speedup_median": 0.927,
+                "speedup_min": 0.915,
+                "effective_gbps_median": 245.7,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.001682,
+                "stock_ms_median": 3.371,
+                "stock_ms_min": 3.343,
+                "cand_ms_median": 3.007,
+                "cand_ms_min": 2.95,
+                "speedup_median": 1.121,
+                "speedup_min": 1.133,
+                "effective_gbps_median": 301.3,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.003055,
+                "stock_ms_median": 3.483,
+                "stock_ms_min": 3.442,
+                "cand_ms_median": 3.501,
+                "cand_ms_min": 3.454,
+                "speedup_median": 0.995,
+                "speedup_min": 0.996,
+                "effective_gbps_median": 258.8,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000972,
+                "stock_ms_median": 3.448,
+                "stock_ms_min": 3.364,
+                "cand_ms_median": 9.35,
+                "cand_ms_min": 8.752,
+                "speedup_median": 0.369,
+                "speedup_min": 0.384,
+                "effective_gbps_median": 96.9,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "tg_deq_bn32_bk64_sk4",
+            "best_ms_median": 3.007,
+            "best_speedup_median": 1.121
+          },
+          "8": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.002081,
+                "stock_ms_median": 6.143,
+                "stock_ms_min": 6.089,
+                "cand_ms_median": 3.776,
+                "cand_ms_min": 3.727,
+                "speedup_median": 1.627,
+                "speedup_min": 1.634,
+                "effective_gbps_median": 239.9,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.001607,
+                "stock_ms_median": 6.058,
+                "stock_ms_min": 5.924,
+                "cand_ms_median": 3.045,
+                "cand_ms_min": 3.007,
+                "speedup_median": 1.989,
+                "speedup_min": 1.97,
+                "effective_gbps_median": 297.5,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001607,
+                "stock_ms_median": 6.176,
+                "stock_ms_min": 5.954,
+                "cand_ms_median": 3.135,
+                "cand_ms_min": 3.088,
+                "speedup_median": 1.97,
+                "speedup_min": 1.928,
+                "effective_gbps_median": 289.0,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000979,
+                "stock_ms_median": 6.112,
+                "stock_ms_min": 6.038,
+                "cand_ms_median": 9.545,
+                "cand_ms_min": 9.067,
+                "speedup_median": 0.64,
+                "speedup_min": 0.666,
+                "effective_gbps_median": 94.9,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "tg_deq_bn32_bk64_sk4",
+            "best_ms_median": 3.045,
+            "best_speedup_median": 1.989
+          },
+          "16": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.00189,
+                "stock_ms_median": 7.471,
+                "stock_ms_min": 7.406,
+                "cand_ms_median": 3.438,
+                "cand_ms_min": 3.386,
+                "speedup_median": 2.173,
+                "speedup_min": 2.187,
+                "effective_gbps_median": 263.5,
+                "status": "PASS"
+              },
+              "u4_direct_atomic_bn32_sk4": {
+                "max_abs_err_fp32": 0.001414,
+                "stock_ms_median": 7.471,
+                "stock_ms_min": 7.413,
+                "cand_ms_median": 3.581,
+                "cand_ms_min": 3.559,
+                "speedup_median": 2.086,
+                "speedup_min": 2.083,
+                "effective_gbps_median": 253.0,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.001896,
+                "stock_ms_median": 7.573,
+                "stock_ms_min": 7.306,
+                "cand_ms_median": 3.441,
+                "cand_ms_min": 3.415,
+                "speedup_median": 2.201,
+                "speedup_min": 2.139,
+                "effective_gbps_median": 263.3,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001896,
+                "stock_ms_median": 7.3,
+                "stock_ms_min": 7.289,
+                "cand_ms_median": 3.443,
+                "cand_ms_min": 3.358,
+                "speedup_median": 2.12,
+                "speedup_min": 2.17,
+                "effective_gbps_median": 263.1,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.000975,
+                "stock_ms_median": 7.246,
+                "stock_ms_min": 7.176,
+                "cand_ms_median": 9.317,
+                "cand_ms_min": 8.825,
+                "speedup_median": 0.778,
+                "speedup_min": 0.813,
+                "effective_gbps_median": 97.2,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk4": {
+                "max_abs_err_fp32": 0.022615,
+                "stock_ms_median": 7.363,
+                "cand_ms_median": 2.995,
+                "cand_ms_min": 2.869,
+                "speedup_median": 2.458,
+                "effective_gbps_median": 302.5,
+                "status": "KILLED_ACCURACY"
+              }
+            },
+            "best_variant": "u4_direct_bn32_sk4",
+            "best_ms_median": 3.438,
+            "best_speedup_median": 2.173
+          },
+          "32": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.002232,
+                "stock_ms_median": 7.438,
+                "stock_ms_min": 7.322,
+                "cand_ms_median": 4.216,
+                "cand_ms_min": 4.172,
+                "speedup_median": 1.764,
+                "speedup_min": 1.755,
+                "effective_gbps_median": 214.9,
+                "status": "PASS"
+              },
+              "u4_direct_atomic_bn32_sk4": {
+                "max_abs_err_fp32": 0.001675,
+                "stock_ms_median": 7.382,
+                "stock_ms_min": 7.351,
+                "cand_ms_median": 4.785,
+                "cand_ms_min": 4.713,
+                "speedup_median": 1.543,
+                "speedup_min": 1.56,
+                "effective_gbps_median": 189.3,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk64_sk2": {
+                "max_abs_err_fp32": 0.002182,
+                "stock_ms_median": 7.383,
+                "stock_ms_min": 7.285,
+                "cand_ms_median": 3.84,
+                "cand_ms_min": 3.759,
+                "speedup_median": 1.923,
+                "speedup_min": 1.938,
+                "effective_gbps_median": 235.9,
+                "status": "PASS"
+              },
+              "tg_deq_bn32_bk64_sk4": {
+                "max_abs_err_fp32": 0.002232,
+                "stock_ms_median": 7.424,
+                "stock_ms_min": 7.297,
+                "cand_ms_median": 4.233,
+                "cand_ms_min": 3.899,
+                "speedup_median": 1.754,
+                "speedup_min": 1.871,
+                "effective_gbps_median": 214.0,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.002182,
+                "stock_ms_median": 7.457,
+                "stock_ms_min": 7.35,
+                "cand_ms_median": 3.934,
+                "cand_ms_min": 3.841,
+                "speedup_median": 1.896,
+                "speedup_min": 1.913,
+                "effective_gbps_median": 230.3,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.001675,
+                "stock_ms_median": 7.387,
+                "stock_ms_min": 7.29,
+                "cand_ms_median": 9.057,
+                "cand_ms_min": 8.826,
+                "speedup_median": 0.816,
+                "speedup_min": 0.826,
+                "effective_gbps_median": 100.0,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk4": {
+                "max_abs_err_fp32": 0.023384,
+                "stock_ms_median": 7.46,
+                "cand_ms_median": 3.938,
+                "cand_ms_min": 3.91,
+                "speedup_median": 1.894,
+                "effective_gbps_median": 230.0,
+                "status": "KILLED_ACCURACY"
+              }
+            },
+            "best_variant": "tg_deq_bn64_bk64_sk2",
+            "best_ms_median": 3.84,
+            "best_speedup_median": 1.923
+          },
+          "64": {
+            "variants": {
+              "u4_direct_bn32_sk2": {
+                "max_abs_err_fp32": 0.002302,
+                "stock_ms_median": 14.247,
+                "stock_ms_min": 14.124,
+                "cand_ms_median": 7.127,
+                "cand_ms_min": 7.075,
+                "speedup_median": 1.999,
+                "speedup_min": 1.996,
+                "effective_gbps_median": 127.1,
+                "status": "PASS"
+              },
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.001867,
+                "stock_ms_median": 14.338,
+                "stock_ms_min": 14.049,
+                "cand_ms_median": 7.063,
+                "cand_ms_min": 6.997,
+                "speedup_median": 2.03,
+                "speedup_min": 2.008,
+                "effective_gbps_median": 128.3,
+                "status": "PASS"
+              },
+              "u4_direct_atomic_bn32_sk4": {
+                "max_abs_err_fp32": 0.001604,
+                "stock_ms_median": 14.288,
+                "stock_ms_min": 14.09,
+                "cand_ms_median": 7.984,
+                "cand_ms_min": 7.909,
+                "speedup_median": 1.789,
+                "speedup_min": 1.782,
+                "effective_gbps_median": 113.5,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.001604,
+                "stock_ms_median": 14.489,
+                "stock_ms_min": 14.114,
+                "cand_ms_median": 4.965,
+                "cand_ms_min": 4.804,
+                "speedup_median": 2.918,
+                "speedup_min": 2.938,
+                "effective_gbps_median": 182.5,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.002302,
+                "stock_ms_median": 14.26,
+                "stock_ms_min": 14.222,
+                "cand_ms_median": 5.037,
+                "cand_ms_min": 4.874,
+                "speedup_median": 2.831,
+                "speedup_min": 2.918,
+                "effective_gbps_median": 179.9,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.001604,
+                "stock_ms_median": 14.453,
+                "stock_ms_min": 14.288,
+                "cand_ms_median": 4.976,
+                "cand_ms_min": 4.853,
+                "speedup_median": 2.904,
+                "speedup_min": 2.944,
+                "effective_gbps_median": 182.1,
+                "status": "PASS"
+              },
+              "workaround_pad65": {
+                "max_abs_err_fp32": 0.001604,
+                "stock_ms_median": 14.343,
+                "stock_ms_min": 14.149,
+                "cand_ms_median": 9.023,
+                "cand_ms_min": 8.944,
+                "speedup_median": 1.59,
+                "speedup_min": 1.582,
+                "effective_gbps_median": 100.4,
+                "status": "PASS"
+              },
+              "workaround_reshape_4x16": {
+                "max_abs_err_fp32": 0.002302,
+                "stock_ms_median": 14.151,
+                "stock_ms_min": 14.069,
+                "cand_ms_median": 14.342,
+                "cand_ms_min": 14.162,
+                "speedup_median": 0.987,
+                "speedup_min": 0.993,
+                "effective_gbps_median": 63.2,
+                "status": "PASS"
+              },
+              "grouped_i8i4_bn32_sk4": {
+                "max_abs_err_fp32": 0.025328,
+                "stock_ms_median": 14.332,
+                "cand_ms_median": 7.007,
+                "cand_ms_min": 6.946,
+                "speedup_median": 2.046,
+                "effective_gbps_median": 129.3,
+                "status": "KILLED_ACCURACY"
+              }
+            },
+            "best_variant": "tg_deq_bn64_bk128_sk1",
+            "best_ms_median": 4.965,
+            "best_speedup_median": 2.918
+          },
+          "128": {
+            "variants": {
+              "u4_direct_bn32_sk4": {
+                "max_abs_err_fp32": 0.002145,
+                "stock_ms_median": 8.9,
+                "stock_ms_min": 8.134,
+                "cand_ms_median": 13.825,
+                "cand_ms_min": 13.443,
+                "speedup_median": 0.644,
+                "speedup_min": 0.605,
+                "effective_gbps_median": 65.5,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk1": {
+                "max_abs_err_fp32": 0.00188,
+                "stock_ms_median": 9.467,
+                "stock_ms_min": 8.569,
+                "cand_ms_median": 9.657,
+                "cand_ms_min": 9.339,
+                "speedup_median": 0.98,
+                "speedup_min": 0.918,
+                "effective_gbps_median": 93.8,
+                "status": "PASS"
+              },
+              "tg_deq_bn64_bk128_sk2": {
+                "max_abs_err_fp32": 0.002123,
+                "stock_ms_median": 9.389,
+                "stock_ms_min": 8.615,
+                "cand_ms_median": 9.935,
+                "cand_ms_min": 9.602,
+                "speedup_median": 0.945,
+                "speedup_min": 0.897,
+                "effective_gbps_median": 91.2,
+                "status": "PASS"
+              },
+              "auto_nax": {
+                "max_abs_err_fp32": 0.00188,
+                "stock_ms_median": 9.526,
+                "stock_ms_min": 9.442,
+                "cand_ms_median": 9.547,
+                "cand_ms_min": 8.995,
+                "speedup_median": 0.998,
+                "speedup_min": 1.05,
+                "effective_gbps_median": 94.9,
+                "status": "PASS"
+              }
+            },
+            "best_variant": "auto_nax",
+            "best_ms_median": 9.547,
+            "best_speedup_median": 0.998
+          }
+        }
+      }
+    },
+    "stacked_gate_up_16L": {
+      "16": {
+        "sep_stock_ms_median": 4.674,
+        "stacked_stock_ms_median": 4.491,
+        "stacked_stock_speedup": 1.041,
+        "stacked_nax_ms_median": 3.767,
+        "stacked_nax_speedup": 1.269
+      },
+      "32": {
+        "sep_stock_ms_median": 4.65,
+        "stacked_stock_ms_median": 4.317,
+        "stacked_stock_speedup": 1.077,
+        "stacked_nax_ms_median": 3.927,
+        "stacked_nax_speedup": 1.179
+      },
+      "64": {
+        "sep_stock_ms_median": 5.145,
+        "stacked_stock_ms_median": 4.991,
+        "stacked_stock_speedup": 1.031,
+        "stacked_nax_ms_median": 5.125,
+        "stacked_nax_speedup": 0.977
+      }
+    }
+  },
+  "qwen35_9b_verify": {
+    "model_id": "mlx-community/Qwen3.5-9B-4bit",
+    "k_values": [
+      1,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "iters": 5,
+    "flush_slc": true,
+    "variants": {
+      "tg_deq_nax": {
+        "config": {
+          "name": "tg_deq_nax",
+          "backend": "tg_deq",
+          "min_m": 8,
+          "max_m": 64,
+          "stack_gate_up": false,
+          "patch_lm_head": true
+        },
+        "patched_count": 201,
+        "stacked_mlp_count": 0,
+        "per_k": {
+          "1": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 1,
+            "greedy_total": 1,
+            "greedy_exact": true,
+            "stock_ms_median": 10.906,
+            "stock_ms_min": 10.809,
+            "variant_ms_median": 10.946,
+            "variant_ms_min": 10.896,
+            "speedup_median": 0.996,
+            "speedup_min": 0.992,
+            "stock_trials_ms": [
+              10.976,
+              10.968,
+              10.906,
+              10.847,
+              10.809
+            ],
+            "variant_trials_ms": [
+              11.044,
+              10.946,
+              10.896,
+              10.945,
+              10.957
+            ]
+          },
+          "4": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 4,
+            "greedy_total": 4,
+            "greedy_exact": true,
+            "stock_ms_median": 16.077,
+            "stock_ms_min": 16.057,
+            "variant_ms_median": 16.127,
+            "variant_ms_min": 16.105,
+            "speedup_median": 0.997,
+            "speedup_min": 0.997,
+            "stock_trials_ms": [
+              16.077,
+              16.057,
+              16.163,
+              16.072,
+              16.168
+            ],
+            "variant_trials_ms": [
+              16.193,
+              16.137,
+              16.114,
+              16.105,
+              16.127
+            ]
+          },
+          "8": {
+            "max_logit_diff": 0.390625,
+            "mean_logit_diff": 0.034733306616544724,
+            "greedy_matches": 8,
+            "greedy_total": 8,
+            "greedy_exact": true,
+            "stock_ms_median": 27.908,
+            "stock_ms_min": 27.854,
+            "variant_ms_median": 18.93,
+            "variant_ms_min": 18.815,
+            "speedup_median": 1.474,
+            "speedup_min": 1.48,
+            "stock_trials_ms": [
+              27.908,
+              27.854,
+              27.894,
+              27.945,
+              27.954
+            ],
+            "variant_trials_ms": [
+              18.93,
+              19.216,
+              18.881,
+              18.815,
+              19.147
+            ]
+          },
+          "16": {
+            "max_logit_diff": 0.1875,
+            "mean_logit_diff": 0.022495746612548828,
+            "greedy_matches": 16,
+            "greedy_total": 16,
+            "greedy_exact": true,
+            "stock_ms_median": 38.39,
+            "stock_ms_min": 38.245,
+            "variant_ms_median": 22.671,
+            "variant_ms_min": 22.473,
+            "speedup_median": 1.693,
+            "speedup_min": 1.702,
+            "stock_trials_ms": [
+              38.245,
+              38.336,
+              38.428,
+              38.52,
+              38.39
+            ],
+            "variant_trials_ms": [
+              22.473,
+              22.512,
+              22.765,
+              22.884,
+              22.671
+            ]
+          },
+          "32": {
+            "max_logit_diff": 0.25,
+            "mean_logit_diff": 0.024059852585196495,
+            "greedy_matches": 32,
+            "greedy_total": 32,
+            "greedy_exact": true,
+            "stock_ms_median": 37.786,
+            "stock_ms_min": 37.631,
+            "variant_ms_median": 24.7,
+            "variant_ms_min": 24.466,
+            "speedup_median": 1.53,
+            "speedup_min": 1.538,
+            "stock_trials_ms": [
+              37.786,
+              37.846,
+              37.631,
+              37.75,
+              37.811
+            ],
+            "variant_trials_ms": [
+              24.466,
+              24.843,
+              24.511,
+              24.913,
+              24.7
+            ]
+          },
+          "64": {
+            "max_logit_diff": 0.328125,
+            "mean_logit_diff": 0.02530335634946823,
+            "greedy_matches": 64,
+            "greedy_total": 64,
+            "greedy_exact": true,
+            "stock_ms_median": 51.264,
+            "stock_ms_min": 49.894,
+            "variant_ms_median": 35.509,
+            "variant_ms_min": 35.289,
+            "speedup_median": 1.444,
+            "speedup_min": 1.414,
+            "stock_trials_ms": [
+              49.894,
+              50.85,
+              51.264,
+              51.823,
+              51.267
+            ],
+            "variant_trials_ms": [
+              35.289,
+              35.509,
+              35.456,
+              36.451,
+              35.895
+            ]
+          }
+        }
+      },
+      "tg_deq_nax_stacked": {
+        "config": {
+          "name": "tg_deq_nax_stacked",
+          "backend": "tg_deq",
+          "min_m": 8,
+          "max_m": 64,
+          "stack_gate_up": true,
+          "patch_lm_head": true
+        },
+        "patched_count": 201,
+        "stacked_mlp_count": 32,
+        "per_k": {
+          "1": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 1,
+            "greedy_total": 1,
+            "greedy_exact": true,
+            "stock_ms_median": 10.906,
+            "stock_ms_min": 10.806,
+            "variant_ms_median": 10.977,
+            "variant_ms_min": 10.964,
+            "speedup_median": 0.994,
+            "speedup_min": 0.986,
+            "stock_trials_ms": [
+              10.906,
+              10.9,
+              10.984,
+              11.031,
+              10.806
+            ],
+            "variant_trials_ms": [
+              10.977,
+              11.196,
+              11.351,
+              10.964,
+              10.971
+            ]
+          },
+          "4": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 4,
+            "greedy_total": 4,
+            "greedy_exact": true,
+            "stock_ms_median": 16.29,
+            "stock_ms_min": 16.187,
+            "variant_ms_median": 16.208,
+            "variant_ms_min": 16.173,
+            "speedup_median": 1.005,
+            "speedup_min": 1.001,
+            "stock_trials_ms": [
+              16.29,
+              16.187,
+              16.204,
+              16.427,
+              16.34
+            ],
+            "variant_trials_ms": [
+              16.291,
+              16.194,
+              16.208,
+              16.173,
+              16.432
+            ]
+          },
+          "8": {
+            "max_logit_diff": 0.390625,
+            "mean_logit_diff": 0.034733306616544724,
+            "greedy_matches": 8,
+            "greedy_total": 8,
+            "greedy_exact": true,
+            "stock_ms_median": 29.416,
+            "stock_ms_min": 29.005,
+            "variant_ms_median": 19.488,
+            "variant_ms_min": 19.163,
+            "speedup_median": 1.509,
+            "speedup_min": 1.514,
+            "stock_trials_ms": [
+              29.416,
+              29.005,
+              29.568,
+              29.022,
+              29.71
+            ],
+            "variant_trials_ms": [
+              19.163,
+              19.342,
+              19.714,
+              19.488,
+              19.758
+            ]
+          },
+          "16": {
+            "max_logit_diff": 0.1875,
+            "mean_logit_diff": 0.022495746612548828,
+            "greedy_matches": 16,
+            "greedy_total": 16,
+            "greedy_exact": true,
+            "stock_ms_median": 38.304,
+            "stock_ms_min": 38.153,
+            "variant_ms_median": 22.43,
+            "variant_ms_min": 22.19,
+            "speedup_median": 1.708,
+            "speedup_min": 1.719,
+            "stock_trials_ms": [
+              39.101,
+              38.314,
+              38.304,
+              38.153,
+              38.299
+            ],
+            "variant_trials_ms": [
+              22.43,
+              22.484,
+              22.19,
+              22.261,
+              22.642
+            ]
+          },
+          "32": {
+            "max_logit_diff": 0.25,
+            "mean_logit_diff": 0.024059852585196495,
+            "greedy_matches": 32,
+            "greedy_total": 32,
+            "greedy_exact": true,
+            "stock_ms_median": 38.927,
+            "stock_ms_min": 38.347,
+            "variant_ms_median": 24.805,
+            "variant_ms_min": 24.756,
+            "speedup_median": 1.569,
+            "speedup_min": 1.549,
+            "stock_trials_ms": [
+              38.347,
+              38.927,
+              38.871,
+              39.77,
+              39.456
+            ],
+            "variant_trials_ms": [
+              25.172,
+              24.805,
+              24.763,
+              24.756,
+              25.424
+            ]
+          },
+          "64": {
+            "max_logit_diff": 0.328125,
+            "mean_logit_diff": 0.02530335634946823,
+            "greedy_matches": 64,
+            "greedy_total": 64,
+            "greedy_exact": true,
+            "stock_ms_median": 53.293,
+            "stock_ms_min": 52.308,
+            "variant_ms_median": 37.751,
+            "variant_ms_min": 35.771,
+            "speedup_median": 1.412,
+            "speedup_min": 1.462,
+            "stock_trials_ms": [
+              52.308,
+              53.973,
+              53.114,
+              53.733,
+              53.293
+            ],
+            "variant_trials_ms": [
+              36.786,
+              37.94,
+              37.751,
+              38.022,
+              35.771
+            ]
+          }
+        }
+      },
+      "u4_direct_nax": {
+        "config": {
+          "name": "u4_direct_nax",
+          "backend": "u4_direct",
+          "min_m": 8,
+          "max_m": 64,
+          "stack_gate_up": false,
+          "patch_lm_head": true
+        },
+        "patched_count": 201,
+        "stacked_mlp_count": 0,
+        "per_k": {
+          "1": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 1,
+            "greedy_total": 1,
+            "greedy_exact": true,
+            "stock_ms_median": 11.277,
+            "stock_ms_min": 11.044,
+            "variant_ms_median": 11.306,
+            "variant_ms_min": 11.063,
+            "speedup_median": 0.997,
+            "speedup_min": 0.998,
+            "stock_trials_ms": [
+              11.349,
+              11.247,
+              11.412,
+              11.277,
+              11.044
+            ],
+            "variant_trials_ms": [
+              11.306,
+              11.222,
+              11.063,
+              11.484,
+              11.72
+            ]
+          },
+          "4": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 4,
+            "greedy_total": 4,
+            "greedy_exact": true,
+            "stock_ms_median": 16.631,
+            "stock_ms_min": 16.389,
+            "variant_ms_median": 16.602,
+            "variant_ms_min": 16.394,
+            "speedup_median": 1.002,
+            "speedup_min": 1.0,
+            "stock_trials_ms": [
+              16.389,
+              16.632,
+              16.531,
+              16.631,
+              16.721
+            ],
+            "variant_trials_ms": [
+              16.394,
+              16.438,
+              16.602,
+              16.653,
+              16.72
+            ]
+          },
+          "8": {
+            "max_logit_diff": 0.375,
+            "mean_logit_diff": 0.03568319231271744,
+            "greedy_matches": 8,
+            "greedy_total": 8,
+            "greedy_exact": true,
+            "stock_ms_median": 29.243,
+            "stock_ms_min": 28.716,
+            "variant_ms_median": 24.944,
+            "variant_ms_min": 24.179,
+            "speedup_median": 1.172,
+            "speedup_min": 1.188,
+            "stock_trials_ms": [
+              29.967,
+              28.716,
+              29.243,
+              29.122,
+              29.707
+            ],
+            "variant_trials_ms": [
+              25.244,
+              24.179,
+              24.944,
+              25.207,
+              24.809
+            ]
+          },
+          "16": {
+            "max_logit_diff": 0.25,
+            "mean_logit_diff": 0.023555681109428406,
+            "greedy_matches": 16,
+            "greedy_total": 16,
+            "greedy_exact": true,
+            "stock_ms_median": 38.716,
+            "stock_ms_min": 38.568,
+            "variant_ms_median": 20.213,
+            "variant_ms_min": 20.012,
+            "speedup_median": 1.915,
+            "speedup_min": 1.927,
+            "stock_trials_ms": [
+              39.238,
+              38.814,
+              38.716,
+              38.568,
+              38.591
+            ],
+            "variant_trials_ms": [
+              20.213,
+              20.137,
+              20.323,
+              20.012,
+              20.33
+            ]
+          },
+          "32": {
+            "max_logit_diff": 0.25,
+            "mean_logit_diff": 0.024446412920951843,
+            "greedy_matches": 31,
+            "greedy_total": 32,
+            "greedy_exact": false,
+            "stock_ms_median": 40.377,
+            "stock_ms_min": 39.12,
+            "variant_ms_median": 28.152,
+            "variant_ms_min": 27.643,
+            "speedup_median": 1.434,
+            "speedup_min": 1.415,
+            "stock_trials_ms": [
+              39.12,
+              40.55,
+              40.489,
+              40.377,
+              40.009
+            ],
+            "variant_trials_ms": [
+              28.012,
+              27.643,
+              28.152,
+              28.516,
+              28.797
+            ]
+          },
+          "64": {
+            "max_logit_diff": 0.3125,
+            "mean_logit_diff": 0.026103133335709572,
+            "greedy_matches": 63,
+            "greedy_total": 64,
+            "greedy_exact": false,
+            "stock_ms_median": 53.769,
+            "stock_ms_min": 53.514,
+            "variant_ms_median": 45.125,
+            "variant_ms_min": 43.612,
+            "speedup_median": 1.192,
+            "speedup_min": 1.227,
+            "stock_trials_ms": [
+              53.741,
+              54.374,
+              54.636,
+              53.514,
+              53.769
+            ],
+            "variant_trials_ms": [
+              45.125,
+              46.642,
+              43.612,
+              43.927,
+              46.042
+            ]
+          }
+        }
+      },
+      "pad65_workaround": {
+        "config": {
+          "name": "pad65_workaround",
+          "backend": "pad65",
+          "min_m": 8,
+          "max_m": 64,
+          "stack_gate_up": false,
+          "patch_lm_head": true
+        },
+        "patched_count": 201,
+        "stacked_mlp_count": 0,
+        "per_k": {
+          "1": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 1,
+            "greedy_total": 1,
+            "greedy_exact": true,
+            "stock_ms_median": 11.02,
+            "stock_ms_min": 10.931,
+            "variant_ms_median": 11.128,
+            "variant_ms_min": 10.86,
+            "speedup_median": 0.99,
+            "speedup_min": 1.007,
+            "stock_trials_ms": [
+              10.931,
+              11.269,
+              11.048,
+              10.933,
+              11.02
+            ],
+            "variant_trials_ms": [
+              11.275,
+              10.86,
+              11.147,
+              11.128,
+              10.901
+            ]
+          },
+          "4": {
+            "max_logit_diff": 0.0,
+            "mean_logit_diff": 0.0,
+            "greedy_matches": 4,
+            "greedy_total": 4,
+            "greedy_exact": true,
+            "stock_ms_median": 16.661,
+            "stock_ms_min": 16.294,
+            "variant_ms_median": 16.644,
+            "variant_ms_min": 16.359,
+            "speedup_median": 1.001,
+            "speedup_min": 0.996,
+            "stock_trials_ms": [
+              16.294,
+              16.625,
+              16.661,
+              16.861,
+              16.924
+            ],
+            "variant_trials_ms": [
+              16.423,
+              16.359,
+              16.644,
+              16.815,
+              17.034
+            ]
+          },
+          "8": {
+            "max_logit_diff": 0.359375,
+            "mean_logit_diff": 0.03638629987835884,
+            "greedy_matches": 8,
+            "greedy_total": 8,
+            "greedy_exact": true,
+            "stock_ms_median": 30.706,
+            "stock_ms_min": 29.531,
+            "variant_ms_median": 59.78,
+            "variant_ms_min": 58.668,
+            "speedup_median": 0.514,
+            "speedup_min": 0.503,
+            "stock_trials_ms": [
+              31.43,
+              29.998,
+              30.729,
+              29.531,
+              30.706
+            ],
+            "variant_trials_ms": [
+              60.53,
+              59.194,
+              60.544,
+              58.668,
+              59.78
+            ]
+          },
+          "16": {
+            "max_logit_diff": 0.203125,
+            "mean_logit_diff": 0.023322971537709236,
+            "greedy_matches": 16,
+            "greedy_total": 16,
+            "greedy_exact": true,
+            "stock_ms_median": 40.282,
+            "stock_ms_min": 40.165,
+            "variant_ms_median": 59.086,
+            "variant_ms_min": 58.275,
+            "speedup_median": 0.682,
+            "speedup_min": 0.689,
+            "stock_trials_ms": [
+              40.282,
+              40.165,
+              40.248,
+              40.315,
+              40.506
+            ],
+            "variant_trials_ms": [
+              59.569,
+              59.477,
+              58.636,
+              58.275,
+              59.086
+            ]
+          },
+          "32": {
+            "max_logit_diff": 0.28125,
+            "mean_logit_diff": 0.024002673104405403,
+            "greedy_matches": 32,
+            "greedy_total": 32,
+            "greedy_exact": true,
+            "stock_ms_median": 39.822,
+            "stock_ms_min": 39.233,
+            "variant_ms_median": 60.002,
+            "variant_ms_min": 57.908,
+            "speedup_median": 0.664,
+            "speedup_min": 0.678,
+            "stock_trials_ms": [
+              39.355,
+              39.998,
+              39.889,
+              39.233,
+              39.822
+            ],
+            "variant_trials_ms": [
+              60.002,
+              60.741,
+              61.061,
+              57.908,
+              59.815
+            ]
+          },
+          "64": {
+            "max_logit_diff": 0.25,
+            "mean_logit_diff": 0.024722181260585785,
+            "greedy_matches": 62,
+            "greedy_total": 64,
+            "greedy_exact": false,
+            "stock_ms_median": 54.221,
+            "stock_ms_min": 53.9,
+            "variant_ms_median": 65.085,
+            "variant_ms_min": 63.78,
+            "speedup_median": 0.833,
+            "speedup_min": 0.845,
+            "stock_trials_ms": [
+              54.52,
+              54.221,
+              54.013,
+              54.512,
+              53.9
+            ],
+            "variant_trials_ms": [
+              63.889,
+              63.78,
+              65.453,
+              65.085,
+              66.451
+            ]
+          }
+        }
+      }
+    }
+  },
+  "verdicts": {
+    "4096x4096_M64_le_2.45ms": {
+      "target_ms": 2.45,
+      "measured_ms": 2.094,
+      "speedup": 2.337,
+      "best_variant": "tg_deq_bn32_bk64_sk2",
+      "pass": true
+    },
+    "4096x4096_M32_le_1.58ms": {
+      "target_ms": 1.58,
+      "measured_ms": 1.562,
+      "speedup": 1.701,
+      "best_variant": "tg_deq_bn32_bk64_sk4",
+      "pass": true
+    },
+    "hardware_int8_int4_exact_zero_err": {
+      "int8_int8_err": 0,
+      "int8_int4_err": 0,
+      "int8_int8_peak_tops": 87.58,
+      "int8_int4_peak_tops": 89.86,
+      "pass": true
+    },
+    "qwen35_9b_verify_K32_le_25ms_exact_greedy": {
+      "target_ms": 25.0,
+      "measured_ms": 24.7,
+      "best_variant": "tg_deq_nax",
+      "greedy_exact": true,
+      "pass": true
+    }
+  }
+}

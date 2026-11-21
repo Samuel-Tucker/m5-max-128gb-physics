@@ -1,0 +1,52 @@
+{
+  "model_id": "mlx-community/Qwen3.5-9B-4bit",
+  "tokens": 122,
+  "baseline_ppl": 67.8184,
+  "arms": [
+    {
+      "wdown_skip_pct": 30,
+      "keep_k": 8602,
+      "ppl": 67.8702,
+      "delta_ppl": 0.0518,
+      "delta_ppl_pct": 0.08,
+      "kl_div": 0.00462,
+      "greedy_agree_pct": 95.87
+    },
+    {
+      "wdown_skip_pct": 40,
+      "keep_k": 7373,
+      "ppl": 68.6408,
+      "delta_ppl": 0.8224,
+      "delta_ppl_pct": 1.21,
+      "kl_div": 0.0141,
+      "greedy_agree_pct": 92.56
+    },
+    {
+      "wdown_skip_pct": 50,
+      "keep_k": 6144,
+      "ppl": 69.9844,
+      "delta_ppl": 2.166,
+      "delta_ppl_pct": 3.19,
+      "kl_div": 0.03612,
+      "greedy_agree_pct": 85.12
+    },
+    {
+      "wdown_skip_pct": 60,
+      "keep_k": 4915,
+      "ppl": 78.0648,
+      "delta_ppl": 10.2464,
+      "delta_ppl_pct": 15.11,
+      "kl_div": 0.07086,
+      "greedy_agree_pct": 77.69
+    },
+    {
+      "wdown_skip_pct": 70,
+      "keep_k": 3686,
+      "ppl": 81.5509,
+      "delta_ppl": 13.7325,
+      "delta_ppl_pct": 20.25,
+      "kl_div": 0.12536,
+      "greedy_agree_pct": 78.51
+    }
+  ]
+}
