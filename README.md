@@ -29,7 +29,7 @@ Measured on `Mac17,6` (macOS Darwin 25.5.0, MLX `0.31.2`, Xcode Metal 4 toolchai
 
 ---
 
-## Five Measured Wins (All Backed by Raw Idle-GPU JSON)
+## Six Measured Wins (All Backed by Raw Idle-GPU JSON)
 
 ### Win #1: Direct Hardware Metal 4 `INT8 × INT4` & `FP16 × UINT4` NAX Silicon (`89.86 TOPS`, `err=0`)
 Apple's Metal 4 SDK (`MetalPerformancePrimitives/MPPTensorOpsMatMul2d.h`) exposes hardware `int8_t × int4b_format → int32_t` and `half/bfloat × uint4b_format → float` tensor operations directly inside `mx.fast.metal_kernel` — MLX `0.31.2` does not use hardware 4-bit tensor inputs yet and manually unpacks to FP16 in shared memory.
@@ -73,6 +73,25 @@ Combining Track A's 201-layer Metal 4 Split-K NAX verifier (`K=15` verified in `
 
 ---
 
+
+### Win #6 (Round 3): Native Official Qwen3.5/3.6 MTP (`HTTP Range` Extraction) + True-ASCII 64K Draft Head + Track A NAX (`2.49×` 9B · `2.25×` 35B · `200.6 tok/s` Bit-Exact Free Prose!)
+Our byte audit revealed that `mlx-community` stripped all official `mtp.*` Multi-Token Prediction weights from Qwen3.5/3.6 checkpoints. Instead of downloading 88 GB of BF16 shards, `benchmarks/extract_mtp_weights.py` pulls **only the exact 15/19 MTP byte ranges** via HTTP Range (`136.9 MB` Q4 for 9B; `475.4 MB` Q4 / ~32 MB active for 35B-A3B; verified zero-centered `+1.0` RMSNorms and exact `[emb, h]` + post-norm chaining: **`85.7%` 35B / `82.5%` 9B Free Prose step-1 accuracy** vs `0.0%` swapped).
+
+We then discovered **82–84%** of every MTP draft step was reading the full 248,320-row `lm_head`. Replacing the *draft-only* head with a contiguous **65,536-row True-UTF8 ASCII Q4 sub-matrix** (`kernels/fast_draft_lm_head.py`, **`2.47×` faster** at `0.538 ms` with `96.9%` recall while target verification remains **100% full-vocab exact**), fusing `K` MTP steps + verify into **one Zero-Sync GPU submission** (`kernels/mtp_spec_engine.py`), and adding an **M-adaptive Hybrid Track A NAX router** (`M≤5` stock, `6≤M≤15` `tg_deq`, `M≥16` `u4_direct`) + `min_order=4` suffix override cracked Free Prose on both models ([`results/round3_35b_mtp_12prompts.json`](results/round3_35b_mtp_12prompts.json), [`results/round3_9b_mtp_12prompts.json`](results/round3_9b_mtp_12prompts.json)):
+
+| Model & Round-3 Arm (12 Sealed Prompts, 128 Greedy Tok) | Overall | Code Edit | Extraction | **Free Prose** | Peak | Bit-Exact |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **`Qwen3.6-35B-A3B-4bit` Stock `B=1`** | `114.6 tok/s` (`1.00×`) | `115.1` | `114.5` | `114.3` | `116.3` | `12/12` |
+| `35B` `mtp_k3_ascii64k` (**Bit-Exact Free-Prose King**) | **`236.4` (`2.06×`)** | `259.8` (`2.26×`) | `248.7` (`2.17×`) | **`200.6` (`1.75×`, pk `237.1=2.06×`)** | `276.3` (`2.40×`) | **`12/12`** |
+| `35B` **`hybrid_suffix_o4_mtp_conf_35b` (Flagship)** | **`257.9` (`2.25×`)** | **`333.3` (`2.90×`, pk `389.2=3.38×`)** | `256.2` (`2.24×`) | `184.1` (`1.61×`, pk `227.2=1.98×`) | **`389.2` (`3.38×`)** | `8/12`* |
+| **`Qwen3.5-9B-4bit` Stock `B=1`** | `93.3 tok/s` (`1.00×`) | `92.9` | `92.3` | `94.5` | `94.8` | `12/12` |
+| `9B` `mtp_k2_ascii64k` (**100% Bit-Exact Stock Verify**) | **`164.4` (`1.76×`)** | `177.4` (`1.91×`) | `170.7` (`1.85×`) | **`145.2` (`1.54×`, pk `160.7=1.70×`)** | `183.1` (`2.04×`) | **`12/12`** |
+| `9B` **`hybrid_suffix_o4_mtp_conf_9b_nax` (Flagship)** | **`231.3` (`2.49×`)** | **`325.2` (`3.50×`, pk `439.3=4.65×`)** | **`221.7` (`2.40×`)** | **`147.0` (`1.55×`, pk `166.0=1.75×`)** | **`439.3` (`4.65×`)** | `9/12`* |
+
+*\*Honest parity note: `mtp_k2/k3` stays **12/12 bit-exact** under stock verify (`236.4 tok/s` on 35B, `165.3 tok/s` on 9B); wider `V≥5` MoE / `V≥6` BF16 NAX occasionally flips 1–2 ULP BF16 near-ties identically to stock MLX prefill. Round-3 honest kills: `MTP_Q2`/`MTP_Q3` layers (`E[tok]` dropped `3.54 → 2.32` for <0.07 ms saved) and `pca_r64_top4096` draft `lm_head` (`64.2%` recall vs `96.9%` True-ASCII 64K).*
+
+---
+
 ## Six Honest Kills (What Failed on Real Silicon — Backed by Raw JSON)
 
 1. **Provably Lossless Sign-Definite Cauchy–Schwarz / Parseval `lm_head` Pruning (5-vs-2 Council Duel) — `KILLED` (`results/track_c_math_duel.json`):** Tested 16 variants (PCA `r=32..256`, Weight SVD, Astra's `8×64` groups, Opus's Hadamard-Q2) on 256 real `Qwen3.5-9B` states. Even granted an **oracle** winning logit upfront, certified lossless skip was **`0.00%–0.24%`** (measured CS looseness **`80×–103×`**, matching Gaussian concentration $\sqrt{4096}/0.6745 = 94.88\times$). Live 2-stage `lm_head` ran **`0.41×`** (`3.00 ms` vs `1.24 ms`) even though our custom Metal gather kernel hit `2.52×` at 25% rows.
@@ -104,6 +123,11 @@ python3 benchmarks/wdown_only_r2.py
 # 5. Exact Gated DeltaNet Rollback + 12-Prompt Sealed Speculative Decode (9B + Metal 4 NAX & 35B-A3B)
 python3 benchmarks/track_d_decode_reversal.py --models 35b --prompts-per-cat 4 --max-tokens 128 --flush-slc
 python3 benchmarks/track_d_decode_reversal.py --models 9b --prompts-per-cat 4 --max-tokens 128 --flush-slc --use-track-a
+
+# 6. Round-3 Native Official MTP (HTTP Range weight extractor — no 88 GB download! — + 12-prompt suite)
+python3 benchmarks/extract_mtp_weights.py --models 9b 35b
+python3 benchmarks/calibrate_mtp.py --models 9b 35b --out results/round3_mtp_calibration.json
+python3 benchmarks/round3_mtp_bench.py --models 35b 9b --prompts-per-cat 4 --max-tokens 128
 ```
 
 ## License

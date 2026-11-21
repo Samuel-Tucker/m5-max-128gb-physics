@@ -11,3 +11,4 @@ sme2_probe
 ane_runner
 .venv/
 *.log
+weights/

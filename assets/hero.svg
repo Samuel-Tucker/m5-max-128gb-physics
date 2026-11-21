@@ -42,8 +42,8 @@
 
   <rect class="card" x="610" y="102" width="265" height="145"/>
   <text x="628" y="128" class="eyebrow-g">REAL MODEL DECODE (12 PROMPTS)</text>
-  <text x="628" y="176" class="big-g">242.5 tok/s</text>
-  <text x="628" y="203" class="label">Qwen3.5-9B code (2.90×) · 35B 2.06×</text>
+  <text x="628" y="176" class="big-g">325.2 tok/s</text>
+  <text x="628" y="203" class="label">Qwen3.5-9B code (3.50×) · 35B 2.25×</text>
   <text x="628" y="226" class="detail">DeltaNet rollback 0.00e+00 (0.3ms)</text>
 
   <rect class="card" x="895" y="102" width="265" height="145"/>

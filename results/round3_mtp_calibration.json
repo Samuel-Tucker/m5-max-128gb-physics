@@ -1,0 +1,349 @@
+{
+  "9b": {
+    "model_id": "mlx-community/Qwen3.5-9B-4bit",
+    "polarity_ablation": {
+      "official_post_eh_postchain": {
+        "step_cond_acc": [
+          0.8298,
+          0.6522,
+          0.5111,
+          0.3636,
+          0.2791
+        ],
+        "mean_accepted_draft": 2.553,
+        "mean_tokens_per_verify": 3.553,
+        "n_steps": 47
+      },
+      "ablate_pre_tgt_eh_postchain": {
+        "step_cond_acc": [
+          0.8298,
+          0.6522,
+          0.4889,
+          0.2955,
+          0.2326
+        ],
+        "mean_accepted_draft": 2.426,
+        "mean_tokens_per_verify": 3.426,
+        "n_steps": 47
+      },
+      "ablate_post_he_postchain": {
+        "step_cond_acc": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_accepted_draft": 0.0,
+        "mean_tokens_per_verify": 1.0,
+        "n_steps": 47
+      },
+      "ablate_post_eh_prechain": {
+        "step_cond_acc": [
+          0.8298,
+          0.6304,
+          0.4889,
+          0.25,
+          0.1628
+        ],
+        "mean_accepted_draft": 2.298,
+        "mean_tokens_per_verify": 3.298,
+        "n_steps": 47
+      }
+    },
+    "categories_q4": {
+      "code_edit": {
+        "step_cond_acc": [
+          0.9683,
+          0.9194,
+          0.8689,
+          0.75,
+          0.6271,
+          0.5345
+        ],
+        "mean_accepted_draft": 4.508,
+        "mean_tokens_per_verify": 5.508,
+        "n_steps": 63
+      },
+      "extraction": {
+        "step_cond_acc": [
+          1.0,
+          0.9839,
+          0.9344,
+          0.9,
+          0.7966,
+          0.6552
+        ],
+        "mean_accepted_draft": 5.079,
+        "mean_tokens_per_verify": 6.079,
+        "n_steps": 63
+      },
+      "free_prose": {
+        "step_cond_acc": [
+          0.8254,
+          0.6613,
+          0.5082,
+          0.35,
+          0.2542,
+          0.1724
+        ],
+        "mean_accepted_draft": 2.698,
+        "mean_tokens_per_verify": 3.698,
+        "n_steps": 63
+      }
+    },
+    "categories_bf16": {
+      "code_edit": {
+        "step_cond_acc": [
+          0.9683,
+          0.9194,
+          0.8689,
+          0.8167,
+          0.7288,
+          0.6552
+        ],
+        "mean_accepted_draft": 4.778,
+        "mean_tokens_per_verify": 5.778,
+        "n_steps": 63
+      },
+      "extraction": {
+        "step_cond_acc": [
+          1.0,
+          0.9839,
+          0.9344,
+          0.9,
+          0.8305,
+          0.7586
+        ],
+        "mean_accepted_draft": 5.206,
+        "mean_tokens_per_verify": 6.206,
+        "n_steps": 63
+      },
+      "free_prose": {
+        "step_cond_acc": [
+          0.8095,
+          0.6129,
+          0.5082,
+          0.4,
+          0.3051,
+          0.2241
+        ],
+        "mean_accepted_draft": 2.778,
+        "mean_tokens_per_verify": 3.778,
+        "n_steps": 63
+      }
+    },
+    "mtp_layer_only_cold_ms": 0.533,
+    "fast_draft_lm_heads": {
+      "exact_q4": {
+        "weight_mb": 572.13,
+        "greedy_agreement": 1.0,
+        "agree_count": "120/120",
+        "cold_ms": 1.258,
+        "warm_4step_ms_each": 1.283
+      },
+      "draft_q2": {
+        "weight_mb": 317.85,
+        "greedy_agreement": 0.9083,
+        "agree_count": "109/120",
+        "cold_ms": 0.822,
+        "warm_4step_ms_each": 0.789
+      },
+      "draft_q3": {
+        "weight_mb": 444.99,
+        "greedy_agreement": 0.975,
+        "agree_count": "117/120",
+        "cold_ms": 1.049,
+        "warm_4step_ms_each": 1.023
+      },
+      "latin_32k_q4": {
+        "weight_mb": 75.5,
+        "greedy_agreement": 0.8583,
+        "agree_count": "103/120",
+        "cold_ms": 0.347,
+        "warm_4step_ms_each": 0.339
+      },
+      "latin_64k_q4": {
+        "weight_mb": 150.99,
+        "greedy_agreement": 0.9417,
+        "agree_count": "113/120",
+        "cold_ms": 0.544,
+        "warm_4step_ms_each": 0.497
+      },
+      "latin_64k_q2": {
+        "weight_mb": 83.89,
+        "greedy_agreement": 0.85,
+        "agree_count": "102/120",
+        "cold_ms": 0.389,
+        "warm_4step_ms_each": 0.37
+      },
+      "pca_r64_top4096": {
+        "weight_mb": 9.46,
+        "greedy_agreement": 0.6417,
+        "agree_count": "77/120",
+        "cold_ms": 0.422,
+        "warm_4step_ms_each": 0.407
+      },
+      "pca_r128_top4096": {
+        "weight_mb": 18.93,
+        "greedy_agreement": 0.6917,
+        "agree_count": "83/120",
+        "cold_ms": 0.428,
+        "warm_4step_ms_each": 0.449
+      }
+    }
+  },
+  "35b": {
+    "model_id": "mlx-community/Qwen3.6-35B-A3B-4bit",
+    "polarity_ablation": {
+      "official_post_eh_postchain": {
+        "step_cond_acc": [
+          0.8723,
+          0.6957,
+          0.5556,
+          0.3864,
+          0.2558
+        ],
+        "mean_accepted_draft": 2.681,
+        "mean_tokens_per_verify": 3.681,
+        "n_steps": 47
+      },
+      "ablate_pre_tgt_eh_postchain": {
+        "step_cond_acc": [
+          0.8298,
+          0.6957,
+          0.5111,
+          0.3409,
+          0.2326
+        ],
+        "mean_accepted_draft": 2.532,
+        "mean_tokens_per_verify": 3.532,
+        "n_steps": 47
+      },
+      "ablate_post_he_postchain": {
+        "step_cond_acc": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_accepted_draft": 0.0,
+        "mean_tokens_per_verify": 1.0,
+        "n_steps": 47
+      },
+      "ablate_post_eh_prechain": {
+        "step_cond_acc": [
+          0.8723,
+          0.6739,
+          0.5333,
+          0.2955,
+          0.2093
+        ],
+        "mean_accepted_draft": 2.511,
+        "mean_tokens_per_verify": 3.511,
+        "n_steps": 47
+      }
+    },
+    "categories_q4": {
+      "code_edit": {
+        "step_cond_acc": [
+          0.9841,
+          0.9516,
+          0.9344,
+          0.9,
+          0.8305,
+          0.7931
+        ],
+        "mean_accepted_draft": 5.19,
+        "mean_tokens_per_verify": 6.19,
+        "n_steps": 63
+      },
+      "extraction": {
+        "step_cond_acc": [
+          1.0,
+          1.0,
+          0.9836,
+          0.95,
+          0.9322,
+          0.8621
+        ],
+        "mean_accepted_draft": 5.508,
+        "mean_tokens_per_verify": 6.508,
+        "n_steps": 63
+      },
+      "free_prose": {
+        "step_cond_acc": [
+          0.8571,
+          0.6774,
+          0.5246,
+          0.3333,
+          0.2034,
+          0.1379
+        ],
+        "mean_accepted_draft": 2.667,
+        "mean_tokens_per_verify": 3.667,
+        "n_steps": 63
+      }
+    },
+    "mtp_layer_only_cold_ms": 0.441,
+    "fast_draft_lm_heads": {
+      "exact_q4": {
+        "weight_mb": 286.06,
+        "greedy_agreement": 1.0,
+        "agree_count": "120/120",
+        "cold_ms": 0.776,
+        "warm_4step_ms_each": 0.75
+      },
+      "draft_q2": {
+        "weight_mb": 158.92,
+        "greedy_agreement": 0.95,
+        "agree_count": "114/120",
+        "cold_ms": 0.67,
+        "warm_4step_ms_each": 0.597
+      },
+      "draft_q3": {
+        "weight_mb": 222.49,
+        "greedy_agreement": 0.975,
+        "agree_count": "117/120",
+        "cold_ms": 0.763,
+        "warm_4step_ms_each": 0.744
+      },
+      "latin_32k_q4": {
+        "weight_mb": 37.75,
+        "greedy_agreement": 0.8667,
+        "agree_count": "104/120",
+        "cold_ms": 0.383,
+        "warm_4step_ms_each": 0.287
+      },
+      "latin_64k_q4": {
+        "weight_mb": 75.5,
+        "greedy_agreement": 0.9417,
+        "agree_count": "113/120",
+        "cold_ms": 0.429,
+        "warm_4step_ms_each": 0.367
+      },
+      "latin_64k_q2": {
+        "weight_mb": 41.94,
+        "greedy_agreement": 0.9,
+        "agree_count": "108/120",
+        "cold_ms": 0.34,
+        "warm_4step_ms_each": 0.284
+      },
+      "pca_r64_top4096": {
+        "weight_mb": 9.2,
+        "greedy_agreement": 0.7417,
+        "agree_count": "89/120",
+        "cold_ms": 0.387,
+        "warm_4step_ms_each": 0.377
+      },
+      "pca_r128_top4096": {
+        "weight_mb": 18.4,
+        "greedy_agreement": 0.925,
+        "agree_count": "111/120",
+        "cold_ms": 0.415,
+        "warm_4step_ms_each": 0.394
+      }
+    }
+  }
+}
